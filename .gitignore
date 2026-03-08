@@ -1,0 +1,16 @@
+# env
+.venv/
+
+# Python
+*.pyc
+**/__pycache__/
+**/.pytest_cache/
+
+#  references
+**/references/
+
+# Local
+**/log/
+**/tmp/
+**/local_test/
+**/test_files/
