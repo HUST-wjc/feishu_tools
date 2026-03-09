@@ -80,7 +80,7 @@ class Bitable(TableMixin, RecordMixin, FieldMixin, ViewMixin):
 
     # ── 素材 ──────────────────────────────────────────────────
 
-    def upload_media(self, file_path: str, parent_type: str | None = None, file_token: str | None = None) -> str:
+    def upload_media(self, file_path: str, parent_type: str | None = None) -> str:
         """上传素材到多维表格，返回 file_token
 
         素材不支持删除
@@ -88,8 +88,6 @@ class Bitable(TableMixin, RecordMixin, FieldMixin, ViewMixin):
         上传后可用于附件字段: {"附件字段名": [{"file_token": token}]}
         parent_type 自动推导: 图片扩展名 → bitable_image, 其余 → bitable_file
         """
-        if file_token:
-            return file_token
         if not parent_type:
             ext = os.path.splitext(file_path)[1].lower()
             parent_type = "bitable_image" if ext in IMAGE_EXTENSIONS else "bitable_file"
