@@ -5,6 +5,47 @@
 
 没有任何日志模块，用户可以在调用方法时自行添加日志记录
 
+## 为什么不用官方 SDK？
+
+以"更新一条多维表格记录"为例——
+
+**官方 SDK (`lark-oapi`)**
+
+```python
+import lark_oapi as lark
+from lark_oapi.api.bitable.v1 import *
+
+client = lark.Client.builder() \
+    .app_id("YOUR_APP_ID") \
+    .app_secret("YOUR_APP_SECRET") \
+    .build()
+
+request = UpdateAppTableRecordRequest.builder() \
+    .app_token("appbcbWCzen6D8dezhoCH2RpMAh") \
+    .table_id("tblsRc9GRRXKqhvW") \
+    .record_id("recqwIwhc6") \
+    .request_body(AppTableRecord.builder()
+        .fields({"状态": "完成"})
+        .build()) \
+    .build()
+
+response = client.bitable.v1.app_table_record.update(request)
+
+if not response.success():
+    raise Exception(f"code: {response.code}, msg: {response.msg}")
+```
+
+**feishu-tools**
+
+```python
+from feishu_tools import Bitable
+
+bt = Bitable(app_id="YOUR_APP_ID", app_secret="YOUR_APP_SECRET",
+             bitable_url="https://xxx.feishu.cn/base/appbcbWCzen6D8dezhoCH2RpMAh?table=tblsRc9GRRXKqhvW")
+
+bt.update_record("recqwIwhc6", {"状态": "完成"})
+```
+
 ## 前置条件
 
 1. 前往 [飞书开发者后台](https://open.feishu.cn/app) 创建应用，获取 `app_id` 和 `app_secret`
