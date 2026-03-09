@@ -66,8 +66,13 @@ bt.update_record("recqwIwhc6", {"状态": "完成"})
 ## 安装
 
 ```bash
+# 从本地源码安装 (开发模式)
 pip install -e ./feishu_tools
+# 或使用 uv
+uv pip install -e ./feishu_tools
 ```
+
+唯一依赖为 `requests`，无其他第三方包。
 
 ## 示例
 
