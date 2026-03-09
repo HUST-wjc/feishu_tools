@@ -422,8 +422,8 @@ driver.delete_file(file_token, file_type="file")
 from feishu_tools import FeishuAPI, Bitable, FeishuDoc
 
 api = FeishuAPI(app_id="cli_xxxx", app_secret="xxxx")
-bt  = Bitable(app_id="", app_secret="", bitable_url="...", feishu_api=api)
-doc = FeishuDoc(app_id="", app_secret="", doc_url="...", feishu_api=api)
+bt  = Bitable(bitable_url="...", feishu_api=api)
+doc = FeishuDoc(doc_url="...", feishu_api=api)
 
 # bt.driver 和 doc.driver 共享同一个 api 实例
 ```
