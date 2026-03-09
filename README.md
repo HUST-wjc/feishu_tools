@@ -389,5 +389,5 @@ doc = FeishuDoc(app_id="", app_secret="", doc_url="...", feishu_api=api)
 
 ## 依赖
 
-- Python >= 3.12
+- Python >= 3.10
 - requests
