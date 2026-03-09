@@ -126,7 +126,7 @@ class RecordMixin:
         https://open.feishu.cn/document/docs/bitable-v1/app-table-record/batch_get
 
         通过多个记录 ID 查询记录信息。
-        官方接口最多支持查询 100 条记录，不推荐 batch_size 参数超过 100
+        该接口最多支持查询 100 条记录。
         """
         all_results = []
         for i in range(0, len(rids), batch_size):
@@ -141,17 +141,19 @@ class RecordMixin:
 
     # ── 创建 ──────────────────────────────────────────────────
 
-    def create_record(self, record: dict[str, Any]) -> str:
-        """创建多维表格记录, 返回记录ID
+    def create_record(self, record: dict[str, Any]) -> dict[str, Any]:
+        """创建多维表格记录, 返回创建的记录 record, 包含 record_id 键
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table-record/create
         """
         url = f"/bitable/v1/apps/{self.app_token}/tables/{self.table_id}/records"
         body = {"fields": record}
-        return self.feishu_api.request("POST", url, body=body)["record"]["record_id"]
+        return self.feishu_api.request("POST", url, body=body)["record"]
 
-    def batch_create_records(self, records: list[dict[str, Any]], batch_size=200) -> list:
+    def batch_create_records(self, records: list[dict[str, Any]], batch_size=1000) -> list:
         """批量创建多维表格记录
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table-record/batch_create
+
+        单次调用最多新增 1,000 条记录。
         """
         all_results = []
         for i in range(0, len(records), batch_size):
@@ -174,12 +176,14 @@ class RecordMixin:
         body = {"fields": record}
         return self.feishu_api.request("PUT", url, body=body)["record"]
 
-    def batch_update_records(self, records: list[tuple[str, dict[str, Any]]], batch_size=200) -> list:
+    def batch_update_records(self, records: list[tuple[str, dict[str, Any]]], batch_size=1000) -> list:
         """
         批量更新多维表格记录
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table-record/batch_update
 
         需要 records 格式为 [(record_id, record_dict), ...]
+
+        单次调用最多更新 1,000 条记录
         """
         all_results = []
         url = f"/bitable/v1/apps/{self.app_token}/tables/{self.table_id}/records/batch_update"

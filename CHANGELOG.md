@@ -16,7 +16,7 @@
 
 ### feishu_doc
 
-- 文档 FeishuDoc 入口类，支持知识库 wiki 文档
+- 文档 FeishuDoc 入口类，支持知识库 wiki 文档和个人空间 docx 文档
 - 读取: get_doc_meta / get_raw_content / get_doc_blocks / get_children
 - 写入: write_markdown (Markdown → 文档块自动转换) / append_markdown (追加写入) / convert_markdown (仅转换不写入) / create_block (手动构建块)
 - 素材: upload_media (上传素材到文档) / update_media_block (在文档中插入图片或文件块)

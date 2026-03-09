@@ -88,8 +88,6 @@ class TableMixin:
     def batch_create_tables(self, table_names: list[str]) -> dict[str, Any]:
         """批量创建多维表格
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table/batch_create
-
-        仅可指定数据表名称, 每个多维表格中，数据表与仪表盘的总数量上限为 100。
         
         请求体示例
         ```
@@ -100,6 +98,8 @@ class TableMixin:
                 }
             ]
         }'
+
+        仅可指定数据表名称, 每个多维表格中，数据表与仪表盘的总数量上限为 100。
         """
         url = f"/bitable/v1/apps/{self.app_token}/tables/batch_create"
         body = {"tables": [{"name": name} for name in table_names]}
@@ -135,8 +135,8 @@ class TableMixin:
         """批量删除多维表格中的数据表
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table/batch_delete
 
-        如果多维表格中只剩最后一张数据表，则不允许被删除
         删除成功无返回值
+        如果多维表格中只剩最后一张数据表，则不允许被删除
         """
         table_list = table_list or self.list_tables()
         if not table_names and not table_ids:

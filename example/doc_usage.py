@@ -16,7 +16,9 @@ if __name__ == "__main__":
     APP_ID = "cli_xxxx"
     APP_SECRET = "xxxx"
     DOC_URL = "https://xxx.feishu.cn/wiki/xxxxx"
-    # 仅支持知识库文档: https://xxx.feishu.cn/wiki/{node_token}
+    # 支持两种格式:
+    #   知识库文档: https://xxx.feishu.cn/wiki/{node_token}
+    #   个人空间文档: https://xxx.feishu.cn/docx/{document_id}
 
     # 用于素材测试的本地文件路径 (替换为你自己的文件)
     TEST_IMAGE = "./test.jpg"

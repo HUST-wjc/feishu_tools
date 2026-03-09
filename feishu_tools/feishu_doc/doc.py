@@ -32,9 +32,17 @@ class FeishuDoc:
         feishu_api: FeishuAPI | None = None) -> None:
         
         self.feishu_api = feishu_api or FeishuAPI(app_id, app_secret)
-        self.node_token = self._parse_doc_url(doc_url)
-        self.driver = FeishuDriver(app_id='', app_secret='', feishu_api=self.feishu_api)
-        self.doc_id = self.feishu_api.get_wiki_app_token(self.node_token)
+
+        url_type, token = self._parse_doc_url(doc_url)
+        self.driver = FeishuDriver(feishu_api=self.feishu_api)
+
+        if url_type == 'wiki':
+            self.node_token = token
+            self.doc_id = self.feishu_api.get_wiki_app_token(self.node_token)
+        else:
+            self.node_token = ''
+            self.doc_id = token
+
         self.doc_url = doc_url
 
     def __repr__(self) -> str:
@@ -42,21 +50,24 @@ class FeishuDoc:
         return f"FeishuDoc(app_id={app_id}, app_secret={app_secret_encrypted}, doc_url={self.doc_url})"
     
     @staticmethod
-    def _parse_doc_url(url: str) -> str:
-        """解析飞书文档 URL, 提取 wiki node_token
-        仅支持知识库文档: https://xxx.feishu.cn/wiki/{node_token}
+    def _parse_doc_url(url: str) -> tuple[str, str]:
+        """解析飞书文档 URL, 返回 (url_type, token)
+
+        支持两种格式:
+        - 知识库文档: https://xxx.feishu.cn/wiki/{node_token}  → ("wiki", node_token)
+        - 个人空间文档: https://xxx.feishu.cn/docx/{document_id} → ("docx", document_id)
         """
         if not url:
             raise ValueError("doc_url 不能为空")
         parsed = urlparse(url)
         path_parts = parsed.path.strip('/').split('/')
         for i, part in enumerate(path_parts):
-            if part == 'wiki' and i + 1 < len(path_parts):
+            if part in ('wiki', 'docx') and i + 1 < len(path_parts):
                 candidate = path_parts[i + 1]
                 if TOKEN_PATTERN.fullmatch(candidate):
-                    return candidate
+                    return part, candidate
                 break
-        raise ValueError(f"无法解析飞书文档URL: {url}, 需要满足模式: /wiki/{{token}}")
+        raise ValueError(f"无法解析飞书文档URL: {url}, 需要满足模式: /wiki/{{token}} 或 /docx/{{token}}")
 
     # ── 读取 ──────────────────────────────────────────────────
 

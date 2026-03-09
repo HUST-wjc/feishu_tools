@@ -85,7 +85,7 @@ parsed = bt.list_parsed_records()  # -> [(record_id, {field: value}), ...]
 # 单条操作
 record = bt.get_record("recXXXX")
 first  = bt.take_one_record()
-rid    = bt.create_record({"名称": "test", "状态": "进行中"})
+rid    = bt.create_record({"名称": "test", "状态": "进行中"})["record_id"]
 bt.update_record(rid, {"状态": "完成"})
 bt.delete_record(rid)
 
@@ -218,7 +218,9 @@ doc = FeishuDoc(
 )
 ```
 
-`doc_url` 为知识库中的文档链接，格式: `https://xxx.feishu.cn/wiki/{node_token}`
+`doc_url` 支持两种格式：
+- **知识库文档**: `https://xxx.feishu.cn/wiki/{node_token}`
+- **个人空间文档**: `https://xxx.feishu.cn/docx/{document_id}`
 
 #### API 一览
 

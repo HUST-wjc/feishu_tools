@@ -24,12 +24,12 @@ if __name__ == "__main__":
     # ── 1. URL 解析 (纯本地, 无网络请求) ─────────────────────────
 
     wiki_url = "https://xxx.feishu.cn/wiki/ABC123def?table=tblXYZ789"
-    node_token, table_id = Bitable.parse_bitable_url(wiki_url)
-    print(f"wiki URL:  node_token={node_token}, table_id={table_id}")
+    url_type, node_token, table_id = Bitable.parse_bitable_url(wiki_url)
+    print(f"wiki URL:  url_type={url_type}, node_token={node_token}, table_id={table_id}")
 
     base_url = "https://xxx.feishu.cn/base/ZLIxbFb5BaAEfBsXSricKtYCnGf"
-    node_token, table_id = Bitable.parse_bitable_url(base_url)
-    print(f"base URL:  node_token={node_token}, table_id={table_id}")
+    url_type, node_token, table_id = Bitable.parse_bitable_url(base_url)
+    print(f"base URL:  url_type={url_type}, node_token={node_token}, table_id={table_id}")
 
     # ── 2. 初始化 & 元数据 ──────────────────────────────────────
 
@@ -108,7 +108,8 @@ if __name__ == "__main__":
     # ── 6. Record 操作 — 单条 & 批量 CRUD ───────────────────────
 
     print("\n--- 单条记录 CRUD ---")
-    rid = bt.create_record({first_field: "测试记录"})
+    record = bt.create_record({first_field: "测试记录"})
+    rid = record["record_id"]
     print(f"创建: {rid}")
 
     record = bt.get_record(rid)
@@ -150,7 +151,8 @@ if __name__ == "__main__":
         print(f"创建附件字段: {attachment_field['field_name']}")
 
     # 将素材写入记录的附件字段
-    rid = bt.create_record({attachment_field["field_name"]: [{"file_token": file_token}]})
+    record = bt.create_record({attachment_field["field_name"]: [{"file_token": file_token}]})
+    rid = record["record_id"]
     print(f"写入附件记录: {rid}")
     bt.delete_record(rid)
     print("清理附件记录: 成功")
