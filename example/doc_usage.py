@@ -116,11 +116,11 @@ doc.write_markdown('# Hello World')
     print(f"\n上传素材: file_token={img_token}")
 
     # 在文档末尾插入图片块 (自动创建 Image Block → 上传 → 绑定)
-    img_block_token = doc.update_media_block(TEST_IMAGE)
+    img_block_token = doc.insert_media_block(TEST_IMAGE)
     print(f"插入图片块: file_token={img_block_token}")
 
     # 在文档末尾插入文件块 (自动创建 File Block → 上传 → 绑定)
-    file_block_token = doc.update_media_block(TEST_FILE)
+    file_block_token = doc.insert_media_block(TEST_FILE)
     print(f"插入文件块: file_token={file_block_token}")
 
     # ── 8. 验证 ─────────────────────────────────────────────────

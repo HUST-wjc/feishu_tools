@@ -88,7 +88,7 @@ class FeishuAPI:
         timeout: int = 120,
     ) -> dict:
         try:
-            return self._request(method, url, params, body, files, timeout)  
+            return self._request(method, url, params, body, files, timeout)  # type: ignore[return-value]
         except _TokenInvalidError:
             self.access_token = self._get_access_token()
             return self._request(method, url, params, body, files, timeout)  # type: ignore[return-value]
@@ -181,6 +181,7 @@ class FeishuAPI:
         app_secret = self.app_secret
         app_secret_encrypted = app_secret[:2] + "*" * (len(app_secret) - 2)
         return app_id, app_secret_encrypted
+
 
 def _combine_response_msg(method: str, url: str, status_code: int, text: str) -> str:
     return (

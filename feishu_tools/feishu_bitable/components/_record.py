@@ -121,7 +121,7 @@ class RecordMixin:
         url = f"/bitable/v1/apps/{self.app_token}/tables/{self.table_id}/records/{rid}"
         return self.feishu_api.request("GET", url)["record"]
 
-    def batch_get_records(self, rids: list[str], batch_size=100) -> list[dict[str, Any]]:
+    def batch_get_records(self, rids: list[str], batch_size: int = 100) -> list[dict[str, Any]]:
         """批量获取多维表格记录
         https://open.feishu.cn/document/docs/bitable-v1/app-table-record/batch_get
 
@@ -149,7 +149,7 @@ class RecordMixin:
         body = {"fields": record}
         return self.feishu_api.request("POST", url, body=body)["record"]
 
-    def batch_create_records(self, records: list[dict[str, Any]], batch_size=1000) -> list:
+    def batch_create_records(self, records: list[dict[str, Any]], batch_size: int = 1000) -> list:
         """批量创建多维表格记录
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table-record/batch_create
 
@@ -176,7 +176,7 @@ class RecordMixin:
         body = {"fields": record}
         return self.feishu_api.request("PUT", url, body=body)["record"]
 
-    def batch_update_records(self, records: list[tuple[str, dict[str, Any]]], batch_size=1000) -> list:
+    def batch_update_records(self, records: list[tuple[str, dict[str, Any]]], batch_size: int = 1000) -> list:
         """
         批量更新多维表格记录
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table-record/batch_update
@@ -209,7 +209,7 @@ class RecordMixin:
         url = f"/bitable/v1/apps/{self.app_token}/tables/{self.table_id}/records/{rid}"
         return self.feishu_api.request("DELETE", url)
 
-    def batch_delete_records(self, rids: list[str], batch_size=500) -> list[dict[str, Any]]:
+    def batch_delete_records(self, rids: list[str], batch_size: int = 500) -> list[dict[str, Any]]:
         """批量删除多维表格记录
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table-record/batch_delete
 

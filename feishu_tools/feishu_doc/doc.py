@@ -199,8 +199,6 @@ class FeishuDoc:
         """上传素材到云文档，返回 file_token
 
         素材不支持删除
-        
-        上传后可用于附件字段: {"附件字段名": [{"file_token": token}]}
         parent_type 自动推导: 图片扩展名 → docx_image, 其余 → docx_file
 
         注意: 旧版文档支持的 parent_type 为 doc_image 和 doc_file
@@ -210,7 +208,7 @@ class FeishuDoc:
             parent_type = "docx_image" if ext in IMAGE_EXTENSIONS else "docx_file"
         return self.driver.upload("medias", file_path, parent_type=parent_type, parent_node=parent_node)
 
-    def update_media_block(self,
+    def insert_media_block(self,
         file_path: str,
         index: int | None = None,
         block_id: str | None = None,

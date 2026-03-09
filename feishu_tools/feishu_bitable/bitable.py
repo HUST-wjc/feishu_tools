@@ -81,7 +81,6 @@ class Bitable(TableMixin, RecordMixin, FieldMixin, ViewMixin):
         """上传素材到多维表格，返回 file_token
 
         素材不支持删除
-
         上传后可用于附件字段: {"附件字段名": [{"file_token": token}]}
         parent_type 自动推导: 图片扩展名 → bitable_image, 其余 → bitable_file
         """

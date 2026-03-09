@@ -304,10 +304,10 @@ doc.create_block(children=[
 file_token = doc.upload_media("./photo.jpg", parent_node)
 
 # 在文档末尾插入图片 (自动创建 Image Block → 上传 → 绑定)
-file_token = doc.update_media_block("./photo.jpg")
+file_token = doc.insert_media_block("./photo.jpg")
 
 # 在文档末尾插入文件 (自动创建 File Block → 上传 → 绑定)
-file_token = doc.update_media_block("./report.pdf")
+file_token = doc.insert_media_block("./report.pdf")
 ```
 
 ##### 删除
@@ -329,7 +329,7 @@ doc.clear_content()  # 清空文档所有内容
 | Markdown 追加 | `append_markdown` |
 | 手动创建块 | `create_block` |
 | 上传素材 | `upload_media` |
-| 插入图片/文件块 | `update_media_block` |
+| 插入图片/文件块 | `insert_media_block` |
 | 清空文档 | `clear_content` |
 
 #### Markdown 写入说明
@@ -417,7 +417,7 @@ driver.delete_file(file_token, file_type="file")
 | `medias` | `bitable_image` | 上传图片素材到多维表格 |
 | `medias` | `bitable_file` | 上传文件素材到多维表格 |
 
-> Bitable 和 FeishuDoc 的 `upload_media` / `update_media_block` 会自动推导 `parent_type`，通常无需直接调用 `FeishuDriver.upload`。
+> Bitable 和 FeishuDoc 的 `upload_media` / `insert_media_block` 会自动推导 `parent_type`，通常无需直接调用 `FeishuDriver.upload`。
 
 ### 共享认证
 
