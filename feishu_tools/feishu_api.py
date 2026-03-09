@@ -27,11 +27,12 @@ class FeishuAPI:
     def _get_access_token(self) -> str:
         """获取飞书 access_token
         https://open.feishu.cn/document/server-docs/api-call-guide/calling-process/get-access-token
+
+        此处 requests 默认 timeout 30s, 防止飞书偶发的网络问题。不接受配置 timeout 参数，因为 30s 已经足够长
         """
         url = f"{self.base_url}/auth/v3/tenant_access_token/internal"
         headers = {"Content-Type": "application/json; charset=utf-8"}
         data = {"app_id": self.app_id, "app_secret": self.app_secret}
-        # 默认 timeout 30s, 防止飞书偶发的网络问题, 不接受配置 timeout 参数，因为 30s 已经足够长
         response = requests.post(url, headers=headers, json=data, timeout=30)
         result = response.json()
         if result.get("code") != 0:
