@@ -11,7 +11,7 @@ class Bitable(TableMixin, RecordMixin, FieldMixin, ViewMixin):
     """飞书多维表格
     https://open.feishu.cn/document/server-docs/docs/bitable-v1/bitable-overview
     
-    一个 table_id 对应多维表格里的一张数据表，如果 bitable_url 里没有数据表的 id, 则默认取第一个数据表
+    一个 table_id 对应多维表格里的一张数据表，如果 bitable_url 里没有数据表的 id, 则默认取第一个数据表 (多维表格至少有一张数据表)
     如果想操作多维表格里的其他数据表，可以用指定的 bitable_url 创建新的 Bitable 对象。
     """
 

@@ -125,7 +125,7 @@ records = bt.list_records(field_filter={
 # 带排序
 records = bt.list_records(field_sort=[{"field_name": "日期", "desc": True}])
 
-# 解析记录 (自动展平文本、人员等复合类型)
+# 解析记录 (自动展平文本复合类型)
 parsed = bt.list_parsed_records()  # -> [(record_id, {field: value}), ...]
 
 # 单条操作

@@ -99,7 +99,7 @@ if __name__ == "__main__":
     records = bt.list_records(field_sort=[{"field_name": first_field, "desc": True}], size_limit=3)
     print(f"sort (desc, limit 3): {len(records)} 条")
 
-    # 解析记录 — 自动展平文本/人员类型
+    # 解析记录 — 自动展平文本类型
     parsed = bt.list_parsed_records(size_limit=2)
     print(f"\nlist_parsed_records (limit 2):")
     for rid, data in parsed:

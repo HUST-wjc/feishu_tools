@@ -88,7 +88,7 @@ class FeishuAPI:
         timeout: int = 120,
     ) -> dict:
         try:
-            return self._request(method, url, params, body, files, timeout)  # type: ignore[return-value]
+            return self._request(method, url, params, body, files, timeout)  
         except _TokenInvalidError:
             self.access_token = self._get_access_token()
             return self._request(method, url, params, body, files, timeout)  # type: ignore[return-value]

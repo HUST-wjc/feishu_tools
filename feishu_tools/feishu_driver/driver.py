@@ -82,7 +82,7 @@ class FeishuDriver:
         if not request_docs:
             if isinstance(request_files, str):
                 request_files = [request_files]
-            request_docs = [{"doc_token": doc_token, "doc_type": "file"} for doc_token in request_files] # type: ignore
+            request_docs = [{"doc_token": doc_token, "doc_type": "file"} for doc_token in request_files] 
 
         params: dict[str, str] = {"user_id_type": user_id_type}
         body: dict[str, Any] = {"request_docs": request_docs, "with_url": with_url}

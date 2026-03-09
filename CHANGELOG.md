@@ -9,7 +9,7 @@
 - Record: list / get / batch_get / create / batch_create / update / batch_update / delete / batch_delete
 - Field: list / create / update / delete
 - View: list / get / create / update / delete
-- 记录解析 (`list_parsed_records`): 自动展平文本和人员类型
+- 记录解析 (`list_parsed_records`): 自动展平文本类型
 - 素材上传 (`upload_media`): 上传图片/文件到多维表格，自动推导 parent_type
 - 分页迭代器 (`iter_paginate` / `paginate`)
 - Token 过期自动刷新

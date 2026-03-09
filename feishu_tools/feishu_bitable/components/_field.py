@@ -73,15 +73,13 @@ class FieldMixin:
         url = f"/bitable/v1/apps/{self.app_token}/tables/{self.table_id}/fields"
         return self.feishu_api.request("POST", url, body=payload)["field"]
 
-    def _resolve_field_id(self, field_name=None, fields_list=None, field_id=None) -> str:
-        if field_id:
-            return field_id
-        if not field_name:
+    def _resolve_field_info(self, field_name=None, fields_list=None, field_id=None) -> tuple[str, str, int]:
+        if not field_name and not field_id:
             raise ValueError("field_name 和 field_id 不能同时为空")
         fields_list = fields_list or self.list_fields()
         for f in fields_list:
-            if f["field_name"] == field_name:
-                return f["field_id"]
+            if f["field_name"] == field_name or f["field_id"] == field_id:
+                return f["field_id"], f["field_name"], f["type"]
         raise ValueError(f"字段不存在, field_name: {field_name}, field_id: {field_id}")
 
     # ── 更新 ──────────────────────────────────────────────────
@@ -95,10 +93,11 @@ class FieldMixin:
         """更新多维表格列
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table-field/update
         """
-        field_id = self._resolve_field_id(field_name, fields_list, field_id)
+        field_id, field_old_name, field_old_type = self._resolve_field_info(field_name, fields_list, field_id)
 
         if not override_payload:
-            field_type = self._resolve_field_type(field_type)
+            field_type = self._resolve_field_type(field_type) if field_type is not None else field_old_type
+            field_name = field_name if field_name is not None else field_old_name
 
             payload = {
                 "field_name": field_name,
@@ -119,7 +118,7 @@ class FieldMixin:
         """删除多维表格列
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table-field/delete
         """
-        field_id = self._resolve_field_id(field_name, fields_list, field_id)
+        field_id, _, _ = self._resolve_field_info(field_name, fields_list, field_id)
 
         url = f"/bitable/v1/apps/{self.app_token}/tables/{self.table_id}/fields/{field_id}"
         return self.feishu_api.request("DELETE", url)
