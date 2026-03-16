@@ -1,4 +1,4 @@
-"""feishu_tools — Doc 用法示例
+"""feishukit — Doc 用法示例
 
 ⚠️ 使用前:
   1. 前往 https://open.feishu.cn/app 创建应用，获取 app_id 和 app_secret
@@ -9,7 +9,7 @@
 
 if __name__ == "__main__":
     from pprint import pprint
-    from feishu_tools import FeishuDoc
+    from feishukit import FeishuDoc
 
     # ── 配置 ──────────────────────────────────────────────────────
     # 替换为你自己的应用凭据和文档 URL
@@ -83,7 +83,7 @@ if __name__ == "__main__":
 ## 代码块
 
 ```python
-from feishu_tools import FeishuDoc
+from feishukit import FeishuDoc
 
 doc = FeishuDoc(app_id='...', app_secret='...', doc_url='...')
 doc.clear_content()

@@ -1,4 +1,4 @@
-"""feishu_tools — Bitable 用法示例
+"""feishukit — Bitable 用法示例
 
 ⚠️ 使用前:
   1. 前往 https://open.feishu.cn/app 创建应用，获取 app_id 和 app_secret
@@ -9,7 +9,7 @@
 
 if __name__ == "__main__":
     from pprint import pprint
-    from feishu_tools import Bitable
+    from feishukit import Bitable
 
     # ── 配置 ──────────────────────────────────────────────────────
     # 替换为你自己的应用凭据和多维表格 URL

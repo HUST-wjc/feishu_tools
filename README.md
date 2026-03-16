@@ -1,4 +1,4 @@
-# feishu-tools
+# feishukit
 
 飞书非官方 Python SDK，替代官方 Java 风格的 SDK。
 目前支持**多维表格 (Bitable)**、**文档 (Doc)** 和 **云空间 (Driver)** API。
@@ -35,10 +35,10 @@ if not response.success():
     raise Exception(f"code: {response.code}, msg: {response.msg}")
 ```
 
-**feishu-tools**
+**feishukit**
 
 ```python
-from feishu_tools import Bitable
+from feishukit import Bitable
 
 bt = Bitable(app_id="YOUR_APP_ID", app_secret="YOUR_APP_SECRET",
              bitable_url="https://xxx.feishu.cn/base/appbcbWCzen6D8dezhoCH2RpMAh?table=tblsRc9GRRXKqhvW")
@@ -66,10 +66,7 @@ bt.update_record("recqwIwhc6", {"状态": "完成"})
 ## 安装
 
 ```bash
-# 从本地源码安装 (开发模式)
-pip install -e ./feishu_tools
-# 或使用 uv
-uv pip install -e ./feishu_tools
+pip install feishukit
 ```
 
 唯一依赖为 `requests`，无其他第三方包。
@@ -89,7 +86,7 @@ uv pip install -e ./feishu_tools
 ### feishu_bitable
 
 ```python
-from feishu_tools import Bitable
+from feishukit import Bitable
 
 bt = Bitable(
     app_id="cli_xxxx",
@@ -255,7 +252,7 @@ bt.list_records(field_sort=[{"field_name": "日期", "desc": True}])
 ### feishu_doc
 
 ```python
-from feishu_tools import FeishuDoc
+from feishukit import FeishuDoc
 
 doc = FeishuDoc(
     app_id="cli_xxxx",
@@ -364,7 +361,7 @@ doc.clear_content()  # 清空文档所有内容
 ### feishu_driver
 
 ```python
-from feishu_tools import FeishuDriver
+from feishukit import FeishuDriver
 
 driver = FeishuDriver(app_id="cli_xxxx", app_secret="xxxx")
 ```
@@ -424,7 +421,7 @@ driver.delete_file(file_token, file_type="file")
 多个实例可共享同一个 `FeishuAPI`，避免重复获取 token：
 
 ```python
-from feishu_tools import FeishuAPI, Bitable, FeishuDoc
+from feishukit import FeishuAPI, Bitable, FeishuDoc
 
 api = FeishuAPI(app_id="cli_xxxx", app_secret="xxxx")
 bt  = Bitable(bitable_url="...", feishu_api=api)

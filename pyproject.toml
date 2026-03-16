@@ -3,14 +3,17 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "feishu-tools"
+name = "feishukit"
 dynamic = ["version"]
-description = "飞书非官方 Python SDK，支持多维表格 (Bitable) 和文档 (Doc) API"
+description = "飞书非官方 Python SDK，支持多维表格 (Bitable)、文档 (Doc) 和云空间 (Driver) API"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE"]
-keywords = ["feishu", "lark", "bitable", "sdk"]
+keywords = ["feishu", "lark", "bitable", "doc", "driver", "sdk"]
+authors = [
+    { name = "cafe_tea" },
+]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
@@ -28,10 +31,10 @@ dependencies = [
 ]
 
 [tool.hatch.version]
-path = "feishu_tools/__init__.py"
+path = "feishukit/__init__.py"
 
 [tool.hatch.build.targets.wheel]
-packages = ["feishu_tools"]
+packages = ["feishukit"]
 
 [project.urls]
-Documentation = "https://open.feishu.cn/document/home/index"
+"Feishu Open Platform" = "https://open.feishu.cn/document/home/index"

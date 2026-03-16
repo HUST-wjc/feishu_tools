@@ -14,3 +14,6 @@
 **/tmp/
 **/local_test/
 **/test_files/
+
+# dist
+**/dist/

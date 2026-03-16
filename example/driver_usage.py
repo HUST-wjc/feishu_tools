@@ -1,4 +1,4 @@
-"""feishu_tools — Driver 用法示例
+"""feishukit — Driver 用法示例
 
 ⚠️ 使用前:
   1. 前往 https://open.feishu.cn/app 创建应用，获取 app_id 和 app_secret
@@ -9,7 +9,7 @@
 if __name__ == "__main__":
     import os
     from pprint import pprint
-    from feishu_tools import FeishuDriver
+    from feishukit import FeishuDriver
 
     # ── 配置 ──────────────────────────────────────────────────────
     APP_ID = "cli_xxxx"
