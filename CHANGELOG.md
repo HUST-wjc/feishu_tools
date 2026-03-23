@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.0.2 (2026)
+
+### feishu_bitable
+
+- `FIELD_TYPE_MAP` 拆分为中文 (`FIELD_TYPE_MAP_CN`) 和英文 (`FIELD_TYPE_MAP_EN`)，合并后仍可通过 `FIELD_TYPE_MAP` 使用
+- 新增字段类型常量 `TEXT_TYPE`、`NUMBER_TYPE`、`FORMULA_TYPE`
+- `parse_record` 支持自动解析公式 / 查找引用字段的嵌套返回值
+- `parse_record` 支持提取记录元数据 (created_time / last_modified_time / created_by / last_modified_by)
+- 添加官方字段编辑指南链接与类型说明注释
+
+### 其他
+
+- `pyproject.toml`: project.urls 改为 GitHub Repository 链接
+
 ## 0.0.1 (2026)
 
 ### feishu_bitable

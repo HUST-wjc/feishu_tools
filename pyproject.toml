@@ -37,4 +37,4 @@ path = "feishukit/__init__.py"
 packages = ["feishukit"]
 
 [project.urls]
-"Feishu Open Platform" = "https://open.feishu.cn/document/home/index"
+Repository = "https://github.com/HUST-wjc/feishu_tools"
