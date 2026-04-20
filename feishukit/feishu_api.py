@@ -52,6 +52,7 @@ class FeishuAPI:
         url = f"{self.base_url}/{url.lstrip('/')}"
         params = params or {}
         headers: dict[str, str] = {"Authorization": f"Bearer {self.access_token}"}
+
         if files:
             response = requests.request(method, url, headers=headers, params=params, data=body or {}, files=files, timeout=timeout)
         elif body is not None:
@@ -136,12 +137,14 @@ class FeishuAPI:
         timeout: int = 600,
     ) -> Generator[Any, Any, None]:
         # 迭代分页获取数据，以飞书表格为例，默认 2万行，可扩充至 5 万行，最高扩容到 200 万行
+        if method.upper() != "GET":
+            body = body or {}
+
         params = dict(params or {})
-        body = body or {}
 
         if 0 < size_limit < page_size:
             page_size = size_limit
-        body["page_size"] = page_size
+        params["page_size"] = page_size
 
         page_token = None
         yielded = 0

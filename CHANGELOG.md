@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.3 (2026)
+
+### FeishuAPI 分页
+
+- 修复 `iter_paginate` / `paginate` 的 `page_size` 传参位置，统一通过 query params 发送，避免分页请求错误地将 `page_size` 放入请求体
+
 ## 0.0.2 (2026)
 
 ### feishu_bitable
