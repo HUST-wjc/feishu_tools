@@ -77,16 +77,20 @@ def map_field_with_type(fields_meta: list[dict]) -> dict[str, int]:
     return field_type_map
 
 
-def parse_record(field_type_map: dict, record: dict) -> tuple[str, dict]:
-    """仅对需要结构化展平的类型做处理，其余保持原始值
-    未来可能会持续优化
+def parse_record(field_type_map: dict, record: dict, automatic_fields: bool = False) -> tuple[str, dict] | tuple[str, dict, dict]:
+    """将单条记录解析为 (record_id, fields_dict) 或 (record_id, fields_dict, meta_dict)。
+
+    处理规则:
+    - 文本类型 (1): 将 rich-text 列表拼接为纯字符串
+    - 数字类型 (2): 公式返回的数字列表自动展平为单值
+    - 公式/引用类型 (19, 20): 提取实际值后按其内部类型递归处理
+    - 其余类型: 保持飞书原始返回值不变
+
+    automatic_fields=True 时额外返回第三个元素 meta_dict，
+    包含 created_time / last_modified_time / created_by / last_modified_by。
     """
     record_id = record["record_id"]
     fields = record.get("fields") or {}
-
-    record_meta_fields = ['created_time', 'last_modified_time', 'created_by', 'last_modified_by']
-    record_meta = {field: record.get(field) for field in record_meta_fields}
-    record_meta_base_name = 'record_meta'
 
     output = {}
     for field, value in fields.items():
@@ -111,15 +115,9 @@ def parse_record(field_type_map: dict, record: dict) -> tuple[str, dict]:
             parsed_value = value
         output[field] = parsed_value
 
-    if any(record_meta.values()):
-        # hacky 设计，避免 record_meta 字段名与实际字段名冲突
-        # 实际上 automatic_fields 被使用到的概率都很低，为了保持返回值结构一致，没有改成三返回值
-        record_meta_name = record_meta_base_name
-        for i in range(1000):
-            if record_meta_name in output:
-                record_meta_name = f"{record_meta_base_name}_{i}"
-            else:
-                break
-        output[record_meta_name] = record_meta
-
+    if automatic_fields:
+        record_meta_fields = ['created_time', 'last_modified_time', 'created_by', 'last_modified_by']
+        record_meta = {field: record.get(field) for field in record_meta_fields}
+        return record_id, output, record_meta
+    
     return record_id, output

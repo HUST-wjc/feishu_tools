@@ -107,14 +107,15 @@ class RecordMixin:
         records = self.list_records(size_limit=1)
         return records[0] if records else {}
 
-    def list_parsed_records(self, fields_meta: list[dict[str, Any]] | None = None, **kwargs) -> list[tuple[str, dict]]:
+    def list_parsed_records(self, fields_meta: list[dict[str, Any]] | None = None, **kwargs) -> list[tuple[str, dict] | tuple[str, dict, dict]]:
         """获取多维表格记录，并根据字段类型进行解析"""
         records = self.list_records(**kwargs)
         if not records:
             return []
+        automatic_fields = kwargs.get('automatic_fields', False)
         fields_meta = fields_meta or self.list_fields() # type: ignore
         field_type_map = map_field_with_type(fields_meta) # type: ignore
-        return [parse_record(field_type_map, record) for record in records]
+        return [parse_record(field_type_map, record, automatic_fields=automatic_fields) for record in records]
 
     def get_record(self, rid: str) -> dict[str, Any]:
         """根据 rid 获取多维表格记录"""

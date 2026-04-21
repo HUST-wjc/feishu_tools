@@ -49,6 +49,9 @@ class FeishuAPI:
         timeout: int = 120,
         raw: bool = False,
     ) -> dict | bytes:
+        """底层 HTTP 请求，不处理 token 失效重试。
+        raw=True 时返回原始 bytes，否则返回 data 字段的 dict。
+        """
         url = f"{self.base_url}/{url.lstrip('/')}"
         params = params or {}
         headers: dict[str, str] = {"Authorization": f"Bearer {self.access_token}"}
@@ -103,6 +106,7 @@ class FeishuAPI:
             return self._request(method, url, params, raw=True, timeout=timeout)  # type: ignore[return-value]
 
     def _download_stream(self, url: str, save_path: str, params: dict[str, Any] | None = None, timeout: int = 300) -> None:
+        """底层流式下载，不处理 token 失效重试。"""
         full_url = f"{self.base_url}/{url.lstrip('/')}"
         headers: dict[str, str] = {"Authorization": f"Bearer {self.access_token}"}
         with requests.get(full_url, headers=headers, params=params or {}, timeout=timeout, stream=True) as resp:
@@ -136,7 +140,12 @@ class FeishuAPI:
         item_key: str = 'items',
         timeout: int = 600,
     ) -> Generator[Any, Any, None]:
-        # 迭代分页获取数据，以飞书表格为例，默认 2万行，可扩充至 5 万行，最高扩容到 200 万行
+        """迭代分页获取数据，按需 yield，避免一次性加载全部结果到内存。
+
+        - size_limit=0 表示不限制，获取全部数据
+        - item_key: 响应 data 中存放列表的键名，飞书大多数接口为 'items'，多维表格记录接口为 'records'
+        - GET 请求不需要 body，非 GET 请求（如 POST search）body 会随每次翻页重复携带
+        """
         if method.upper() != "GET":
             body = body or {}
 
@@ -165,6 +174,7 @@ class FeishuAPI:
             page_token = result["page_token"]
 
     def paginate(self, *args, **kwargs) -> list:
+        """iter_paginate 的非惰性版本，一次性返回全部结果列表。"""
         return list(self.iter_paginate(*args, **kwargs))
 
     def get_wiki_app_token(self, node_token: str, obj_type: str = "wiki") -> str:
