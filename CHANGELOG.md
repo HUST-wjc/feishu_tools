@@ -2,9 +2,21 @@
 
 ## 0.0.3 (2026)
 
-### FeishuAPI 分页
+### FeishuAPI
 
 - 修复 `iter_paginate` / `paginate` 的 `page_size` 传参位置，统一通过 query params 发送，避免分页请求错误地将 `page_size` 放入请求体
+
+### feishu_bitable
+
+- `parse_record` 新增 `automatic_fields` 参数（默认 `False`）
+  - **返回值结构变更**：`automatic_fields=False` 时返回 `(record_id, fields_dict)`，`automatic_fields=True` 时返回 `(record_id, fields_dict, meta_dict)`，不再将元数据注入 `fields_dict`
+  - `meta_dict` 包含 `created_time` / `last_modified_time` / `created_by` / `last_modified_by`
+  - 移除原有的字段名冲突检测逻辑（hacky loop）
+- `list_parsed_records` 自动从 `kwargs` 提取 `automatic_fields` 并传递给 `parse_record`，返回类型注解同步更新
+
+### 文档
+
+- 为 `_request`、`_download_stream`、`iter_paginate`、`paginate` 补充 docstring
 
 ## 0.0.2 (2026)
 
