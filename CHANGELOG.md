@@ -8,11 +8,16 @@
 
 ### feishu_bitable
 
+- `parse_bitable_url` 返回值更新为 `(url_type, token, table_id, view_id)`，支持从 bitable URL 中直接解析 `view` 参数
+- `Bitable` 新增 `default_view_id` 属性，自动保存 `bitable_url` 中解析出的默认视图 ID
+- `list_records` 新增 `use_default_view_id` 参数（默认 `False`），在未显式传入 `view_name` / `view_id` 时可使用 `default_view_id` 作为查询视图
+- `list_records` 改为仅支持关键字参数调用，避免多可选参数场景下的位置参数歧义
 - `parse_record` 新增 `automatic_fields` 参数（默认 `False`）
   - **返回值结构变更**：`automatic_fields=False` 时返回 `(record_id, fields_dict)`，`automatic_fields=True` 时返回 `(record_id, fields_dict, meta_dict)`，不再将元数据注入 `fields_dict`
   - `meta_dict` 包含 `created_time` / `last_modified_time` / `created_by` / `last_modified_by`
   - 移除原有的字段名冲突检测逻辑（hacky loop）
 - `list_parsed_records` 自动从 `kwargs` 提取 `automatic_fields` 并传递给 `parse_record`，返回类型注解同步更新
+- README、示例脚本和本地测试 notebook 已同步更新上述用法
 
 ### 文档
 

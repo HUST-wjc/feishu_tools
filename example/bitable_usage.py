@@ -15,27 +15,28 @@ if __name__ == "__main__":
     # 替换为你自己的应用凭据和多维表格 URL
     APP_ID = "cli_xxxx"
     APP_SECRET = "xxxx"
-    BITABLE_URL = "https://xxx.feishu.cn/base/xxxxx?table=tblxxxx"
+    BITABLE_URL = "https://xxx.feishu.cn/base/xxxxx?table=tblxxxx&view=vewxxxx"
     # 支持两种格式:
-    #   知识库: https://xxx.feishu.cn/wiki/{node_token}?table={table_id}
-    #   个人目录: https://xxx.feishu.cn/base/{app_token}?table={table_id}
+    #   知识库: https://xxx.feishu.cn/wiki/{node_token}?table={table_id}&view={view_id}
+    #   个人目录: https://xxx.feishu.cn/base/{app_token}?table={table_id}&view={view_id}
     # 不带 ?table= 时自动取第一个数据表
 
     # ── 1. URL 解析 (纯本地, 无网络请求) ─────────────────────────
 
-    wiki_url = "https://xxx.feishu.cn/wiki/ABC123def?table=tblXYZ789"
-    url_type, node_token, table_id = Bitable.parse_bitable_url(wiki_url)
-    print(f"wiki URL:  url_type={url_type}, node_token={node_token}, table_id={table_id}")
+    wiki_url = "https://xxx.feishu.cn/wiki/ABC123def?table=tblXYZ789&view=vewXYZ789"
+    url_type, node_token, table_id, view_id = Bitable.parse_bitable_url(wiki_url)
+    print(f"wiki URL:  url_type={url_type}, node_token={node_token}, table_id={table_id}, view_id={view_id}")
 
     base_url = "https://xxx.feishu.cn/base/ZLIxbFb5BaAEfBsXSricKtYCnGf"
-    url_type, node_token, table_id = Bitable.parse_bitable_url(base_url)
-    print(f"base URL:  url_type={url_type}, node_token={node_token}, table_id={table_id}")
+    url_type, node_token, table_id, view_id = Bitable.parse_bitable_url(base_url)
+    print(f"base URL:  url_type={url_type}, node_token={node_token}, table_id={table_id}, view_id={view_id}")
 
     # ── 2. 初始化 & 元数据 ──────────────────────────────────────
 
     bt = Bitable(app_id=APP_ID, app_secret=APP_SECRET, bitable_url=BITABLE_URL)
     print(f"\napp_token:  {bt.app_token}")
     print(f"table_id:   {bt.table_id}")
+    print(f"default_view_id: {bt.default_view_id}")
 
     meta = bt.get_bitable_meta()
     pprint(meta)
@@ -99,11 +100,21 @@ if __name__ == "__main__":
     records = bt.list_records(field_sort=[{"field_name": first_field, "desc": True}], size_limit=3)
     print(f"sort (desc, limit 3): {len(records)} 条")
 
+    # 使用 bitable_url 中的默认视图
+    records = bt.list_records(use_default_view_id=True, size_limit=3)
+    print(f"default view (limit 3): {len(records)} 条")
+
     # 解析记录 — 自动展平文本类型
     parsed = bt.list_parsed_records(size_limit=2)
     print(f"\nlist_parsed_records (limit 2):")
     for rid, data in parsed:
         print(f"  {rid}: {data}")
+
+    parsed_auto = bt.list_parsed_records(size_limit=1, automatic_fields=True)
+    print(f"\nlist_parsed_records (automatic_fields=True, limit 1):")
+    for rid, data, meta in parsed_auto:
+        print(f"  {rid}: {data}")
+        print(f"  meta: {meta}")
 
     # ── 6. Record 操作 — 单条 & 批量 CRUD ───────────────────────
 

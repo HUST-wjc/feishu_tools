@@ -96,10 +96,11 @@ bt = Bitable(
 ```
 
 `bitable_url` 支持两种格式：
-- **知识库中的多维表格**: `https://xxx.feishu.cn/wiki/{node_token}?table={table_id}`
-- **个人目录中的多维表格**: `https://xxx.feishu.cn/base/{app_token}?table={table_id}`
+- **知识库中的多维表格**: `https://xxx.feishu.cn/wiki/{node_token}?table={table_id}&view={view_id}`
+- **个人目录中的多维表格**: `https://xxx.feishu.cn/base/{app_token}?table={table_id}&view={view_id}`
 
 如果 URL 中不包含 `table=` 参数，会自动取多维表格中的第一个数据表。
+如果 URL 中包含 `view=` 参数，会自动解析为 `bt.default_view_id`。
 
 #### API 一览
 
@@ -111,6 +112,7 @@ records = bt.list_records()                              # 全量
 records = bt.list_records(size_limit=10)                 # 限制数量
 records = bt.list_records(field_names=["名称", "状态"])   # 指定字段
 records = bt.list_records(view_name="视图名")             # 按视图查询
+records = bt.list_records(use_default_view_id=True)      # 使用 bitable_url 中的默认视图
 records = bt.list_records(automatic_fields=True)         # 含创建时间/修改时间等
 
 # 带过滤条件
@@ -124,6 +126,7 @@ records = bt.list_records(field_sort=[{"field_name": "日期", "desc": True}])
 
 # 解析记录 (自动展平文本复合类型)
 parsed = bt.list_parsed_records()  # -> [(record_id, {field: value}), ...]
+parsed = bt.list_parsed_records(automatic_fields=True)   # -> [(record_id, {field: value}, {meta_key: value}), ...]
 
 # 单条操作
 record = bt.get_record("recXXXX")

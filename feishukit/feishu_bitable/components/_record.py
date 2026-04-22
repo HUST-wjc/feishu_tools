@@ -15,17 +15,20 @@ class RecordMixin:
     feishu_api: FeishuAPI
     app_token: str
     table_id: str
+    default_view_id: str | None
     request_delay: float
 
     # ── 查询 ──────────────────────────────────────────────────
 
     def list_records(self,
+        *,
         field_names: list[str] | None = None,
         field_sort: None | list[dict[str, Any]] = None,
         field_filter: None | dict[str, Any] = None,
         view_name: str | None = None,
         view_list: list[dict[str, Any]] | None = None,
         view_id: str | None = None,
+        use_default_view_id: bool = False,
         automatic_fields: bool = False,
         page_size: int = 500,
         size_limit: int = 0,
@@ -33,18 +36,21 @@ class RecordMixin:
         """获取多维表格记录, 值为 None 的字段会被忽略
         https://open.feishu.cn/document/docs/bitable-v1/app-table-record/search
         
+        参数很多，所以禁止了位置参数，必须使用关键字参数调用。
         当 filter 参数 或 sort 参数不为空时，请求视为对数据表中的全部数据做条件过滤，指定的 view_id 会被忽略。
 
         参数说明:
-        - size_limit: 限制返回的记录数量，默认不限制
         - field_names: 字段名称，用于指定本次查询返回记录中包含的字段
-        - timeout: 请求超时时间，默认 120 秒
         - field_sort: 排序条件
         - field_filter: 包含条件筛选信息的对象
         - view_name: 使用指定 view_name 获取 view_id, 多维表格中视图的唯一标识, 限制获取的数据在指定视图里
         - view_list: 如果已经通过 list_views 获取了视图列表，则可以传入 view_list 参数，避免重复调用 list_views 接口
         - view_id: 如果已经通过 list_views 获取了视图列表，则可以传入 view_id 参数，避免重复调用 list_views 接口
+        - use_default_view_id: 当 view_name 和 view_id 都为空时，是否使用 bitable_url 中解析出的 default_view_id。默认为 false。
         - automatic_fields: 是否自动计算并返回创建时间 (created_time)、修改时间 (last_modified_time)、创建人 (created_by)、修改人 (last_modified_by) 这四类字段。默认为 false, 表示不返回。
+        - page_size: 分页大小，默认 500, 官方支持的最大值为 500
+        - size_limit: 限制返回的记录数量，默认不限制
+        - timeout: 请求超时时间，默认 120 秒
 
         sort 示例
         "sort": [
@@ -87,6 +93,8 @@ class RecordMixin:
 
         if view_name or view_id:
             view_id = self._resolve_view_id(view_name, view_list, view_id) # type: ignore
+        else:
+            view_id = self.default_view_id if use_default_view_id else None
 
         body = {}
 

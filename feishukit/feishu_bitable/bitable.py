@@ -12,6 +12,7 @@ class Bitable(TableMixin, RecordMixin, FieldMixin, ViewMixin):
     https://open.feishu.cn/document/server-docs/docs/bitable-v1/bitable-overview
     
     一个 table_id 对应多维表格里的一张数据表，如果 bitable_url 里没有数据表的 id, 则默认取第一个数据表 (多维表格至少有一张数据表)
+    如果 bitable_url 里包含 view 参数，则会解析为 default_view_id。
     如果想操作多维表格里的其他数据表，可以用指定的 bitable_url 创建新的 Bitable 对象。
     """
 
@@ -24,7 +25,7 @@ class Bitable(TableMixin, RecordMixin, FieldMixin, ViewMixin):
 
         self.feishu_api = feishu_api or FeishuAPI(app_id, app_secret)
 
-        url_type, self.node_token, table_id = self.parse_bitable_url(bitable_url)
+        url_type, self.node_token, table_id, self.default_view_id = self.parse_bitable_url(bitable_url)
         self.driver = FeishuDriver(feishu_api=self.feishu_api)
 
         if url_type == 'wiki':
@@ -46,24 +47,26 @@ class Bitable(TableMixin, RecordMixin, FieldMixin, ViewMixin):
         return f"Bitable(app_id={app_id}, app_secret={app_secret_encrypted}, bitable_url={self.bitable_url}, request_delay={self.request_delay})"
     
     @staticmethod
-    def parse_bitable_url(url: str) -> tuple[str, str, str | None]:
-        """解析飞书多维表格 URL, 返回 (url_type, token, table_id)
+    def parse_bitable_url(url: str) -> tuple[str, str, str | None, str | None]:
+        """解析飞书多维表格 URL, 返回 (url_type, token, table_id, view_id)
 
         支持两种格式:
-        - 知识库: https://xxx.feishu.cn/wiki/{node_token}?table={table_id} → ("wiki", node_token, table_id)
-        - 个人目录: https://xxx.feishu.cn/base/{app_token}?table={table_id} → ("base", app_token, table_id)
+        - 知识库: https://xxx.feishu.cn/wiki/{node_token}?table={table_id}&view={view_id} → ("wiki", node_token, table_id, view_id)
+        - 个人目录: https://xxx.feishu.cn/base/{app_token}?table={table_id}&view={view_id} → ("base", app_token, table_id, view_id)
         """
         if not url:
             raise ValueError("bitable_url 不能为空")
         parsed = urlparse(url)
+        query = parse_qs(parsed.query)
         path_parts = parsed.path.strip('/').split('/')
 
         for i, part in enumerate(path_parts):
             if part in ('wiki', 'base') and i + 1 < len(path_parts):
                 candidate = path_parts[i + 1]
                 if TOKEN_PATTERN.fullmatch(candidate):
-                    table_id = parse_qs(parsed.query).get('table', [None])[0]
-                    return part, candidate, table_id
+                    table_id = query.get('table', [None])[0]
+                    view_id = query.get('view', [None])[0]
+                    return part, candidate, table_id, view_id
                 break
 
         raise ValueError(f"无法解析飞书多维表格URL: {url}, 需要满足模式: /wiki/{{token}} 或 /base/{{token}}")
