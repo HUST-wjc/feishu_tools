@@ -3,6 +3,7 @@ https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table-field/guid
 
 查找引用 (19) 和 公式 (20) 字段, 在使用列出记录接口时, 返回的实际值而不是公式，比如 "{'type': 1, 'value': [{'text': 'xxx', 'type': 'text'}]}"
 人员类型 (11, 1003, 1004) 为列表, 包含字段 avatar_url, email, en_name, id, name
+日期类型是 int 类型的 ms 时间戳
 '''
 
 FIELD_TYPE_MAP_CN: dict[str, int] = {
@@ -83,8 +84,10 @@ def parse_record(field_type_map: dict, record: dict, automatic_fields: bool = Fa
     处理规则:
     - 文本类型 (1): 将 rich-text 列表拼接为纯字符串
     - 数字类型 (2): 公式返回的数字列表自动展平为单值
-    - 公式/引用类型 (19, 20): 提取实际值后按其内部类型递归处理
+    - 公式/引用类型 (19, 20): 提取实际值后按其内部类型继续处理
     - 其余类型: 保持飞书原始返回值不变
+
+    注意: 日期公式这类非数字内部类型会保留 value 原样，例如 [1772380800000]。
 
     automatic_fields=True 时额外返回第三个元素 meta_dict，
     包含 created_time / last_modified_time / created_by / last_modified_by。

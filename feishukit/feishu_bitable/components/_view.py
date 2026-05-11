@@ -18,6 +18,18 @@ class ViewMixin:
     def list_views(self) -> list[dict[str, Any]]:
         """获取多维表格视图
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table-view/list
+
+        返回值为视图信息列表。列表接口不会返回完整 property，例如:
+        ```
+        [
+            {
+                "view_id": "vewxxxxxxxxxxx",
+                "view_name": "表格",
+                "view_public_level": "Public",
+                "view_type": "grid"
+            }
+        ]
+        ```
         """
         url = f"/bitable/v1/apps/{self.app_token}/tables/{self.table_id}/views"
         return self.feishu_api.paginate("GET", url)
@@ -36,6 +48,16 @@ class ViewMixin:
     def get_view_info(self, view_name: str | None = None, view_list: list[dict[str, Any]] | None = None, view_id: str | None = None) -> dict[str, Any]:
         """获取多维表格视图信息
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table-view/get
+
+        返回值为视图详情，包含 property，例如:
+        ```
+        {
+            "property": {"filter_info": None, "hidden_fields": None},
+            "view_id": "vewxxxxxxxxxxx",
+            "view_name": "表格",
+            "view_type": "grid"
+        }
+        ```
         """
         view_id = self._resolve_view_id(view_name, view_list, view_id)
         url = f"/bitable/v1/apps/{self.app_token}/tables/{self.table_id}/views/{view_id}"
@@ -61,6 +83,15 @@ class ViewMixin:
             gallery: 画册视图
             gantt: 甘特视图
             form: 表单视图
+
+        返回值为新建的视图信息，例如:
+        ```
+        {
+            "view_id": "vewxxxxxxxxxxx",
+            "view_name": "新视图",
+            "view_type": "grid"
+        }
+        ```
         """
         url = f"/bitable/v1/apps/{self.app_token}/tables/{self.table_id}/views"
         body = {"view_name": view_name}
@@ -97,6 +128,16 @@ class ViewMixin:
             },
             "view_name": "grid"
         }'
+        ```
+
+        返回值为更新后的视图信息，例如:
+        ```
+        {
+            "property": {"filter_info": None, "hidden_fields": None},
+            "view_id": "vewxxxxxxxxxxx",
+            "view_name": "新视图名",
+            "view_type": "grid"
+        }
         ```
         """
         view_id = self._resolve_view_id(view_name, view_list, view_id)

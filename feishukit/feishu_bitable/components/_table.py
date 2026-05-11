@@ -18,12 +18,26 @@ class TableMixin:
     def list_tables(self) -> list[dict[str, Any]]:
         """获取多维表格列表
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table/list
+
+        返回值为数据表信息列表，例如:
+        ```
+        [
+            {
+                "name": "数据表",
+                "revision": 343,
+                "table_id": "tblxxxxxxxxxxxxxx"
+            }
+        ]
+        ```
         """
         url = f"/bitable/v1/apps/{self.app_token}/tables"
         return self.feishu_api.paginate("GET", url)
 
     def get_table_size(self) -> int:
-        """获取多维表格记录数，只获取一条数据，快速返回，但是受限于飞书本身的接口限制，有时候还是会很慢很慢，可能是 1秒 也可能是 1分钟"""
+        """获取多维表格记录数，只获取一条数据，快速返回，但是受限于飞书本身的接口限制，有时候还是会很慢很慢，可能是 1秒 也可能是 1分钟
+
+        返回值为当前数据表的记录总数。
+        """
         url = f"/bitable/v1/apps/{self.app_token}/tables/{self.table_id}/records/search"
         response = self.feishu_api.request("POST", url, body={'page_size': 1})
         return response['total']
@@ -73,6 +87,15 @@ class TableMixin:
         ```
 
         表格名为必填
+
+        返回值为新建的数据表信息，例如:
+        ```
+        {
+            "name": "新数据表",
+            "revision": 1,
+            "table_id": "tblxxxxxxxxxxxxxx"
+        }
+        ```
         """
         url = f"/bitable/v1/apps/{self.app_token}/tables"
 
@@ -100,6 +123,11 @@ class TableMixin:
         }'
 
         仅可指定数据表名称, 每个多维表格中，数据表与仪表盘的总数量上限为 100。
+
+        返回值为创建结果，例如:
+        ```
+        {"table_ids": ["tblxxxxxxxxxxxxxx"]}
+        ```
         """
         url = f"/bitable/v1/apps/{self.app_token}/tables/batch_create"
         body = {"tables": [{"name": name} for name in table_names]}
@@ -112,6 +140,15 @@ class TableMixin:
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table/patch
 
         如果名称为空或和旧名称相同，接口仍然会返回成功，但是名称不会被更改。
+
+        返回值为更新后的数据表信息，例如:
+        ```
+        {
+            "name": "新表名",
+            "revision": 344,
+            "table_id": "tblxxxxxxxxxxxxxx"
+        }
+        ```
         """
         url = f"/bitable/v1/apps/{self.app_token}/tables/{self.table_id}"
         body = {"name": table_new_name}
@@ -156,4 +193,3 @@ class TableMixin:
         url = f"/bitable/v1/apps/{self.app_token}/tables/batch_delete"
         body = {"table_ids": table_ids}
         self.feishu_api.request("POST", url, body=body)
-

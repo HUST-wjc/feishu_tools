@@ -140,7 +140,13 @@ bt.batch_create_records([{"名称": f"item_{i}"} for i in range(10)])
 bt.batch_get_records(["recXXX1", "recXXX2"])
 bt.batch_update_records([(rid1, {"状态": "完成"}), (rid2, {"状态": "进行中"})])
 bt.batch_delete_records(["recXXX1", "recXXX2"])
+
+# 写入人员字段时可按需指定 user_id_type
+bt.create_record({"负责人": ["ou_xxx"]}, user_id_type="open_id")
+bt.batch_update_records([(rid1, {"负责人": ["on_xxx"]})], user_id_type="union_id")
 ```
+
+记录接口的返回值会因飞书接口和字段类型不同而变化；`list_records` / `batch_get_records` 的文本字段通常是 rich-text list，`create_record` / `update_record` 的文本字段通常是字符串。复杂返回结构可直接参考函数 docstring。
 
 ##### Field（字段/列）
 

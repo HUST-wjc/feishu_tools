@@ -74,6 +74,18 @@ class Bitable(TableMixin, RecordMixin, FieldMixin, ViewMixin):
     def get_bitable_meta(self) -> dict[str, Any]:
         """获取多维表格元数据
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app/get
+
+        返回值为多维表格元信息，例如:
+        ```
+        {
+            "app_token": "basxxxxxxxxxxxxxx",
+            "formula_type": 2,
+            "is_advanced": false,
+            "name": "多维表格名称",
+            "revision": 343,
+            "time_zone": "Asia/Shanghai"
+        }
+        ```
         """
         url = f"/bitable/v1/apps/{self.app_token}"
         return self.feishu_api.request("GET", url).get('app') or {}

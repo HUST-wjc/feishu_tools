@@ -56,9 +56,21 @@ class FieldMixin:
 
     # ── 创建 ──────────────────────────────────────────────────
 
-    def create_field(self, field_name: str, field_type: int | str | None = None, override_payload: dict[str, Any] | None = None):
+    def create_field(self, field_name: str, field_type: int | str | None = None, override_payload: dict[str, Any] | None = None) -> dict[str, Any]:
         """创建多维表格列
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table-field/create
+
+        返回示例:
+        {
+            "field_id": "fldXXXXXX",
+            "field_name": "测试字段_文本",
+            "is_extend": False,
+            "is_primary": False,
+            "is_synced": False,
+            "property": None,
+            "type": 1,
+            "ui_type": "Text",
+        }
         """
         if not override_payload:
             field_type = self._resolve_field_type(field_type)
@@ -92,6 +104,18 @@ class FieldMixin:
         field_id: str | None = None) -> dict[str, Any]:
         """更新多维表格列
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table-field/update
+
+        返回更新后的单个 field dict:
+        {
+            "field_id": "fldXXXXXX",
+            "field_name": "测试字段_已改名",
+            "is_extend": False,
+            "is_primary": False,
+            "is_synced": False,
+            "property": None,
+            "type": 1,
+            "ui_type": "Text",
+        }
         """
         field_id, field_old_name, field_old_type = self._resolve_field_info(field_name, fields_list, field_id)
 
@@ -117,6 +141,9 @@ class FieldMixin:
                     field_id: str | None = None) -> dict[str, Any]:
         """删除多维表格列
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table-field/delete
+
+        返回示例:
+        {"deleted": True, "field_id": "fldXXXXXX"}
         """
         field_id, _, _ = self._resolve_field_info(field_name, fields_list, field_id)
 

@@ -143,7 +143,7 @@ class FeishuAPI:
         """迭代分页获取数据，按需 yield，避免一次性加载全部结果到内存。
 
         - size_limit=0 表示不限制，获取全部数据
-        - item_key: 响应 data 中存放列表的键名，飞书大多数接口为 'items'，多维表格记录接口为 'records'
+        - item_key: 响应 data 中存放列表的键名，飞书大多数接口为 'items'
         - GET 请求不需要 body，非 GET 请求（如 POST search）body 会随每次翻页重复携带
         """
         if method.upper() != "GET":

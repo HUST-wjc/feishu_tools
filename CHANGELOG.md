@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.0.4 (2026)
+
+### feishu_bitable
+
+- 记录写入接口新增 `user_id_type` 参数，支持按 `open_id` / `union_id` / `user_id` 写入人员字段
+- `get_record` 改为复用 `batch_get_records`，避免继续依赖飞书已不推荐的单条记录历史接口
+- 补充 Bitable 相关函数的返回值示例和类型注解，覆盖 Record / Field / Table / View / Meta 常用接口
+- `parse_record` 文档补充公式 / 查找引用字段的解析行为说明
+
 ## 0.0.3 (2026)
 
 ### FeishuAPI
