@@ -5,6 +5,8 @@ import requests
 
 
 TOKEN_PATTERN = re.compile(r"[A-Za-z0-9+/]+={0,2}")
+TOKEN_INVALID_CODES = {99991663, 99991677}
+
 
 class FeishuRuntimeError(RuntimeError):
     """飞书 API 请求错误"""
@@ -16,15 +18,22 @@ class _TokenInvalidError(Exception):
 
 
 class FeishuAPI:
-    def __init__(self, app_id: str, app_secret: str):
+    def __init__(
+        self,
+        app_id: str,
+        app_secret: str,
+        *,
+        init_access_token: bool = True,
+        base_url: str = "https://open.feishu.cn/open-apis",
+    ):
         if not all([app_id.strip(), app_secret.strip()]):
             raise ValueError("app_id 和 app_secret 不能为空")
         self.app_id = app_id.strip()
         self.app_secret = app_secret.strip()
-        self.base_url = "https://open.feishu.cn/open-apis"
-        self.access_token = self._get_access_token()
+        self.base_url = base_url.rstrip("/")
+        self.access_token = self._get_access_token() if init_access_token else ""
 
-    def _get_access_token(self) -> str:
+    def _get_access_token(self, refresh: bool = False) -> str:
         """获取飞书 access_token
         https://open.feishu.cn/document/server-docs/api-call-guide/calling-process/get-access-token
 
@@ -40,17 +49,18 @@ class FeishuAPI:
             raise FeishuRuntimeError(f"获取 access_token 失败: {response_msg}")
         return result["tenant_access_token"]
 
-    def _request(self, 
-        method: str, 
-        url: str, 
-        params: dict[str, Any] | None = None, 
-        body: dict[str, Any] | None = None, 
-        files: dict | None = None, 
+    def _request(
+        self,
+        method: str,
+        url: str,
+        params: dict[str, Any] | None = None,
+        body: dict[str, Any] | None = None,
+        files: dict | None = None,
         timeout: int = 120,
         raw: bool = False,
     ) -> dict | bytes:
         """底层 HTTP 请求，不处理 token 失效重试。
-        raw=True 时返回原始 bytes，否则返回 data 字段的 dict。
+        raw=True 时返回原始 bytes, 否则返回 data 字段的 dict。
         """
         url = f"{self.base_url}/{url.lstrip('/')}"
         params = params or {}
@@ -68,7 +78,7 @@ class FeishuAPI:
             response.raise_for_status()
         except requests.HTTPError as e:
             response_msg = _combine_response_msg(method, url, response.status_code, response.text)
-            if "invalid access token" in response.text.lower():
+            if _is_token_invalid_response(response):
                 raise _TokenInvalidError(response_msg) from e
             raise FeishuRuntimeError(response_msg) from e
 
@@ -78,23 +88,24 @@ class FeishuAPI:
         response_msg = _combine_response_msg(method, url, response.status_code, response.text)
         result = response.json()
         if result.get("code") != 0:
-            if result.get("code") == 99991663:
+            if _is_token_invalid_response(response):
                 raise _TokenInvalidError(response_msg)
             raise FeishuRuntimeError(response_msg)
         return result.get("data") or {}
 
-    def request(self, 
-        method: str, 
-        url: str, 
-        params: dict[str, Any] | None = None, 
-        body: dict[str, Any] | None = None, 
-        files: dict | None = None, 
+    def request(
+        self,
+        method: str,
+        url: str,
+        params: dict[str, Any] | None = None,
+        body: dict[str, Any] | None = None,
+        files: dict | None = None,
         timeout: int = 120,
     ) -> dict:
         try:
             return self._request(method, url, params, body, files, timeout)  # type: ignore[return-value]
         except _TokenInvalidError:
-            self.access_token = self._get_access_token()
+            self.access_token = self._get_access_token(refresh=True)
             return self._request(method, url, params, body, files, timeout)  # type: ignore[return-value]
 
     def request_raw(self, method: str, url: str, params: dict[str, Any] | None = None, timeout: int = 300) -> bytes:
@@ -102,7 +113,7 @@ class FeishuAPI:
         try:
             return self._request(method, url, params, raw=True, timeout=timeout)  # type: ignore[return-value]
         except _TokenInvalidError:
-            self.access_token = self._get_access_token()
+            self.access_token = self._get_access_token(refresh=True)
             return self._request(method, url, params, raw=True, timeout=timeout)  # type: ignore[return-value]
 
     def _download_stream(self, url: str, save_path: str, params: dict[str, Any] | None = None, timeout: int = 300) -> None:
@@ -114,7 +125,7 @@ class FeishuAPI:
                 resp.raise_for_status()
             except requests.HTTPError as e:
                 response_msg = _combine_response_msg("GET", full_url, resp.status_code, resp.text)
-                if "invalid access token" in resp.text.lower():
+                if _is_token_invalid_response(resp):
                     raise _TokenInvalidError(response_msg) from e
                 raise FeishuRuntimeError(response_msg) from e
             with open(save_path, "wb") as f:
@@ -126,7 +137,7 @@ class FeishuAPI:
         try:
             self._download_stream(url, save_path, params, timeout)
         except _TokenInvalidError:
-            self.access_token = self._get_access_token()
+            self.access_token = self._get_access_token(refresh=True)
             self._download_stream(url, save_path, params, timeout)
 
     def iter_paginate(
@@ -190,10 +201,25 @@ class FeishuAPI:
 
     def _masked_credentials(self) -> tuple[str, str]:
         """获取加密后的应用元数据, 用于其他 类的 __repr__ 方法"""
-        app_id = self.app_id
-        app_secret = self.app_secret
-        app_secret_encrypted = app_secret[:2] + "*" * (len(app_secret) - 2)
-        return app_id, app_secret_encrypted
+        if len(self.app_secret) <= 2:
+            return self.app_id, "*" * len(self.app_secret)
+        return self.app_id, self.app_secret[:2] + "*" * (len(self.app_secret) - 2)
+
+
+def _is_token_invalid_response(response: requests.Response) -> bool:
+    text_lower = response.text.lower()
+    if (
+        "invalid access token" in text_lower
+        or "invalid user_access_token" in text_lower
+        or "authentication token expired" in text_lower
+        or "token expired" in text_lower
+    ):
+        return True
+    try:
+        result = response.json()
+    except ValueError:
+        return False
+    return isinstance(result, dict) and result.get("code") in TOKEN_INVALID_CODES
 
 
 def _combine_response_msg(method: str, url: str, status_code: int, text: str) -> str:
