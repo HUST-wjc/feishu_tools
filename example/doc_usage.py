@@ -2,7 +2,9 @@
 
 ⚠️ 使用前:
   1. 前往 https://open.feishu.cn/app 创建应用，获取 app_id 和 app_secret
-  2. 为应用申请 docx:document 权限 (文档放在知识库中还需 wiki:wiki:readonly)
+  2. 为应用申请 docs:document.content:read、docx:document:readonly、
+     docx:document:write_only、docx:document.block:convert 等权限
+     (文档放在知识库中还需 wiki:node:read)
   3. 将应用添加为知识库文档的协作者
   4. 请在新建的、非生产环境的文档上运行本脚本，测试中包含清空和写入操作
 """
@@ -107,13 +109,10 @@ doc.write_markdown('# Hello World')
     doc.append_markdown("## 追加章节\n\n这是通过 `append_markdown` 追加的内容。")
     print("追加写入完成")
 
-    # ── 7. 素材 — 上传 & 插入图片/文件块 ─────────────────────
+    # ── 7. 素材 — 插入图片/文件块 ─────────────────────────────
 
-    # 上传素材，获取 file_token
-    # 通过 get_children 获取根节点 block_id
-    parent_node = 'xxxx'
-    img_token = doc.upload_media(TEST_IMAGE, parent_node=doc.doc_id)
-    print(f"\n上传素材: file_token={img_token}")
+    # 推荐直接使用 insert_media_block；它会自动创建目标块、上传素材并绑定 token。
+    # upload_media 是底层能力，需要你自行提供目标 block_id，普通使用场景不建议直接调用。
 
     # 在文档末尾插入图片块 (自动创建 Image Block → 上传 → 绑定)
     img_block_token = doc.insert_media_block(TEST_IMAGE)

@@ -2,7 +2,7 @@
 
 ⚠️ 使用前:
   1. 前往 https://open.feishu.cn/app 创建应用，获取 app_id 和 app_secret
-  2. 为应用申请 bitable:app 权限 (多维表格放在知识库中还需 wiki:wiki:readonly)
+  2. 为应用申请 bitable:app 权限 (多维表格放在知识库中还需 wiki:node:read)
   3. 将应用添加为多维表格的协作者
   4. 请在新建的、非生产环境的多维表格上运行本脚本，测试中包含删除操作
 """

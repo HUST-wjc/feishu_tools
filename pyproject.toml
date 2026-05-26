@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "feishukit"
 dynamic = ["version"]
-description = "飞书非官方 Python SDK，支持多维表格 (Bitable)、文档 (Doc) 和云空间 (Driver) API"
+description = "飞书非官方 Python SDK，支持多维表格 (Bitable)、电子表格 (Spreadsheet)、文档 (Doc) 和云空间 (Driver) API"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"

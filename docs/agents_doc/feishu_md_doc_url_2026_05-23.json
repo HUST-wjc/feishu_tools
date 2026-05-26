@@ -1,0 +1,2362 @@
+[
+  {
+    "index": 1,
+    "name": "智能助手：从自然语言到可执行代码",
+    "url": "https://open.feishu.cn/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/AI-assistant-code-generation-guide",
+    "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM/AI-assistant-code-generation-guide.md",
+    "type": "DocumentType",
+    "children": []
+  },
+  {
+    "index": 2,
+    "name": "API 调用指南",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/api-call-guide",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "调用流程",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/ukDNz4SO0MjL5QzM",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "API 列表",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/server-api-list",
+        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/server-api-list.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "API 权限列表",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/scope-list",
+        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/scope-list.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "频控策略",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uUzN04SN3QjL1cDN",
+        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/uUzN04SN3QjL1cDN.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "通用参数",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology",
+        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "通用错误码",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/ugjM14COyUjL4ITN",
+        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/ugjM14COyUjL4ITN.md",
+        "type": "DocumentType"
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "name": "事件与回调",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "事件订阅",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/event-subscriptions",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "回调订阅",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/callback-subscription",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "常见问题",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/event-card-faq",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide/event-card-faq.md",
+        "type": "DocumentType"
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "name": "服务端 SDK",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "服务端 SDK 概述",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uETO1YjLxkTN24SM5UjN",
+        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/uETO1YjLxkTN24SM5UjN.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "Java SDK 指南",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/java-sdk-guide",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "Golang SDK 指南",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/golang-sdk-guide",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "Python SDK 指南",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/python--sdk",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "NodeJS SDK 指南",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/nodejs-sdk",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "常见问题",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/faq",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/server-side-sdk/faq.md",
+        "type": "DocumentType"
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "name": "认证及授权",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/authentication-management",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "登录态管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/authentication-management/login-state-management",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "获取访问凭证",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/authentication-management/access-token",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "事件",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/authentication-management/auth-v4",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "name": "通讯录",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "通讯录概述",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/resources",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/resources.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "通讯录常见问题",
+        "url": "https://open.feishu.cn/document/ugTN1YjL4UTN24CO1UjN/uQzN1YjL0cTN24CN3UjN",
+        "md_url": "https://open.feishu.cn/document/ugTN1YjL4UTN24CO1UjN/uQzN1YjL0cTN24CN3UjN.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "权限范围",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/scope",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "用户",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/user",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "用户组",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "自定义用户字段",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/custom_attr",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "人员类型",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/employee_type_enum",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "部门",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/department",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "单位",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/unit",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "用户组成员",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/group-member",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "角色",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/functional_role",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "角色成员",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/functional_role-member",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "职级",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/job_level",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "序列",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/job_family",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "职务",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/job_title",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "工作城市",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/contact-v3/work_city",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "name": "组织架构",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/directory-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "组织架构概述",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/directory-v1/overview",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/directory-v1/overview.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "字段枚举",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/directory-v1/field-enumeration",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/directory-v1/field-enumeration.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "查询条件用法",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/directory-v1/filter-usage",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/directory-v1/filter-usage.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "员工管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/directory-v1/employee",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "部门管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/directory-v1/department",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "name": "消息",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "消息概述",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/introduction",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/introduction.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "消息常见问题",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/guide/faq",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/guide/faq.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "消息管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "批量消息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/batch_message",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "图片信息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/image",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "文件信息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/file",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "消息加急",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/buzz-messages",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "表情回复",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-reaction",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "Pin",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/pin",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "消息卡片",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/message-card",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "URL 预览",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/url_preview",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "name": "群组",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "群组概述",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/overview",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/overview.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "群组常见问题",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/faq",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/faq.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "群组管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "群成员",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/im-v1/chat/chat-member",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "新版群公告",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/upgraded-group-announcement",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "群公告",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/im-v1/chat/chat-announcement",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "会话标签页",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-tab",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "群菜单",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/im-v1/chat-menu_tree",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "name": "飞书卡片",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "飞书卡片资源概述",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/feishu-card-resource-overview",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/feishu-card-resource-overview.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "卡片",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "组件",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card-element",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "卡片回传交互回调",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukzMukzMukzM/feishu-cards/card-callback-communication.md",
+        "type": "DocumentType"
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "name": "消息流",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "消息流概述",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2/overview",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2/overview.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "应用消息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2/app_feed_card",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "群聊或机器人消息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2/groups-bots",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "name": "企业自定义群标签",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/tenant-tag",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "查询实体与标签的绑定关系",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2/biz_entity_tag_relation/get",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2/biz_entity_tag_relation/get.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "创建标签",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2/tag/create",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2/tag/create.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "修改标签",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2/tag/patch",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2/tag/patch.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "查询标签",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2/tag/list",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2/tag/list.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "绑定标签到群",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2/biz_entity_tag_relation/create",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2/biz_entity_tag_relation/create.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "解绑标签与群",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2/biz_entity_tag_relation/update",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/group/im-v2/biz_entity_tag_relation/update.md",
+        "type": "DocumentType"
+      }
+    ]
+  },
+  {
+    "index": 13,
+    "name": "云文档",
+    "url": "https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "云文档概述",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/docs-overview",
+        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/docs-overview.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "云文档常见问题",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN",
+        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/uczNzUjL3czM14yN3MTN.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "云空间",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/drive-v1",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "知识库",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "文档",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/docs",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "电子表格",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/sheets-v3",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "多维表格",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/bitable-v1",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "画板",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/board-v1",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "权限",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uIzNzUjLyczM14iM3MTN",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "评论",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uUTNzUjL1UzM14SN1MTN/CommentAPI",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "云文档助手",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/docs-assistant",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "通用",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/docs-v1",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 14,
+    "name": "日历",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "日历概述",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uETM3YjLxEzN24SMxcjN",
+        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/uETM3YjLxEzN24SMxcjN.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "日历常见问题",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-faq",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-faq.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "日历管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "日历访问控制",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-acl",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "日程管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "会议群",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event-meeting_chat",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "会议纪要",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event-meeting_minute",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "请假日程管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/timeoff_event",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "会议室日程管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/meeting-room-event",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "日程参与人管理（含会议室）",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/calendar-event-attendee",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "同步到本地日历",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/setting",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "同步 Exchange 日历信息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/calendar-v4/exchange_binding",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 15,
+    "name": "视频会议",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "纪要",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/note",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "视频会议概述",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/video-conferencing-overview",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/video-conferencing-overview.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "预约",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/reserve",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "会议管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "录制",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting-recording",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "会议报告",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/report",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "导出",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/export",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "会议室层级",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room_level",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "会议室管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/room",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "会议室配置",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/scope_config",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "会议数据",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/meeting-room-data",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "告警中心",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/vc-v1/alert",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 16,
+    "name": "妙记",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/minutes-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "妙记音视频文件",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute-media",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "妙记文字记录",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute-transcript",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "妙记统计数据",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute-statistics",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "妙记信息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/minutes-v1/minute",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 17,
+    "name": "考勤打卡",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "考勤打卡概述",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/overview",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/overview.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "接入指南",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/attendance-development-guidelines.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "考勤班次",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/shift",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "考勤排班",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_daily_shift",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "考勤组管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/group",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "考勤用户管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_setting",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "考勤统计",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_stats_data",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "假勤审批",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_approval",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "考勤补卡",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_task_remedy",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "归档报表",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/archive_rule",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "打卡信息管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/user_task",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "休假获取过期发放记录",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/leave_employ_expire_record",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "休假发放记录",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/leave_accrual_record",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "事件",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/attendance-v1/event",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 18,
+    "name": "审批",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "审批概述",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval-overview",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval-overview.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "审批常见问题",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval-related-faqs",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval-related-faqs.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "接入指南",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/development-guide",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "原生审批定义",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "原生审批实例",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "原生审批任务",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/task",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "原生审批文件",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/file",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "原生审批评论",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/instance-comment",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "三方审批定义",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_approval",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "三方审批实例",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_instance",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "三方审批任务",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/external_task",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "审批 Bot 消息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/message",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "审批查询",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/approval-search",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "审批事件",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uIDO24iM4YjLygjN/event",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "地理库信息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/approval-v4/district",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 19,
+    "name": "机器人",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/bot-v3",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "获取机器人信息",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uAjMxEjLwITMx4CMyETM",
+        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/uAjMxEjLwITMx4CMyETM.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "事件",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/application-v6/bot/events",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 20,
+    "name": "服务台",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/helpdesk-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "服务台概述",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uETM0YjLxEDN24SMxQjN",
+        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/uETM0YjLxEDN24SMxQjN.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "服务台接入指南",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/ugDOyYjL4gjM24CO4IjN",
+        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/ugDOyYjL4gjM24CO4IjN.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "客服",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/helpdesk-v1/agent-function",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "工单",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/helpdesk-v1/ticket-management",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "知识库",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/helpdesk-v1/faq-management",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "推送中心",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/helpdesk-v1/notification",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "事件订阅",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/helpdesk-v1/event",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 21,
+    "name": "任务",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "任务概述",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/overview",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/overview.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "常见问题",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/faq",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/faq.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "任务",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/task",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "子任务",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/task-subtask",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "清单",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "清单动态订阅",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/tasklist-activity_subscription",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "评论",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/comment",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "附件",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/attachment",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "自定义分组",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/section",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "自定义字段",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "自定义字段选项",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/task-v2/custom_field-option",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 22,
+    "name": "邮箱",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "邮件模板",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-template",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "邮箱设置项",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-setting",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "邮件会话",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-thread",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "邮件标签",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-label",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "草稿",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-draft",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "用户邮箱",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "邮箱文件夹",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-folder",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "用户邮件",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-message",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "事件",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-event",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "收信规则",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-rule",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "邮箱联系人",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-mail_contact",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "邮件组",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/mail-group",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "公共邮箱",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/public-mailbox",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "用户邮箱别名",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user_mailbox-alias",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "邮箱地址",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/mail-v1/user",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 23,
+    "name": "应用信息",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/application-v6",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "应用",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/application-v6/application",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "应用权限",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/application-v6/scope",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "应用管理",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uATN1EjLwUTNx4CM1UTM",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "应用管理员",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/application-v6/app-administrator",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "应用使用情况",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uMTO2YjLzkjN24yM5YjN",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "应用反馈",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/application-v6/application-feedback",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "应用红点",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/application-v6/app_badge",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "事件",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/application-v6/event",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 24,
+    "name": "企业信息",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/tenant-v2",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "企业席位信息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant-product_assign_info",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "获取企业信息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant/query",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/tenant-v2/tenant/query.md",
+        "type": "DocumentType"
+      }
+    ]
+  },
+  {
+    "index": 25,
+    "name": "认证信息",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/verification-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "获取认证信息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/verification-v1/verification/get",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/verification-v1/verification/get.md",
+        "type": "DocumentType"
+      }
+    ]
+  },
+  {
+    "index": 26,
+    "name": "个人设置",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/personal_settings-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "系统状态",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/personal_settings-v1/system_status",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 27,
+    "name": "搜索",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/search-v2",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "文档搜索",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/search-v2/doc_wiki",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "套件搜索",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/search-v2/suite-search",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "搜索连接器",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/search-v2/open-search",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 28,
+    "name": "AI 能力",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/ai",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "智能文档处理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/ai/document_ai-v1",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "光学字符识别",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/ai/optical_char_recognition-v1",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "语音识别",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/ai/speech_to_text-v1",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "机器翻译",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/ai/translation-v1",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 29,
+    "name": "飞书妙搭",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "概述",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/overview",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/overview.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "数据表",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/app-table",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "视图",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/app-view",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "枚举",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/app-enum",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "文件存储",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/app-storage",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "执行 SQL",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/app/sql_commands",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/app/sql_commands.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "通讯录",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/spark-v1/directory-user",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 30,
+    "name": "飞书 aPaaS",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/apaas-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "应用",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/apaas-v1/app",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "席位分配",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/apaas-v1/seat_assignment",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "席位活跃",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/apaas-v1/seat_activity",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "审计日志",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/apaas-v1/application-audit_log",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "权限",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/apaas-v1/permission",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "对象",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/apaas-v1/application-object-record",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "函数",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/apaas-v1/application-function",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "环境变量",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/apaas-v1/application-environment_variable",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "流程",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/apaas-v1/flow",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "常见问题",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/apaas-v1/faqs",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/apaas-v1/faqs.md",
+        "type": "DocumentType"
+      }
+    ]
+  },
+  {
+    "index": 31,
+    "name": "飞书 Aily",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/aily-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "会话",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/aily-v1/aily_session",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "消息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/aily-v1/aily_session-aily_message",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "运行",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/aily-v1/aily_session-run",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "技能",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/aily-v1/app-skill",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "知识问答",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/aily-v1/data-knowledge",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 32,
+    "name": "管理后台",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/admin-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "登录密码管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/admin-v1/password",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "数据报表管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/admin-v1/data-report-management",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "企业勋章",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/admin-v1/badge",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 33,
+    "name": "公司圈",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/moments-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "帖子及评论内容格式转换",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/moments-v1/moments-explanation",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/moments-v1/moments-explanation.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "帖子",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/moments-v1/post",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "评论",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/moments-v1/comment",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "表情互动",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/moments-v1/reaction",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "帖子统计数据",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/moments-v1/post_statistics",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 34,
+    "name": "飞书人事（标准版）",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/ehr/ehr-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "接入指南",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/ehr/ehr-v1/introduction",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/ehr/ehr-v1/introduction.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "批量获取员工花名册信息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/ehr/ehr-v1/employee/list",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/ehr/ehr-v1/employee/list.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "下载人员的附件",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/ehr/ehr-v1/attachment/get",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/ehr/ehr-v1/attachment/get.md",
+        "type": "DocumentType"
+      }
+    ]
+  },
+  {
+    "index": 35,
+    "name": "飞书人事（企业版）",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "飞书人事概述",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/overview",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/overview.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "自定义字段说明",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom-fields-guide",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/custom-fields-guide.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "枚举常量介绍",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/feishu-people-enum-constant",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/feishu-people-enum-constant.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "时间轴介绍",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/about-timeline-version",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/about-timeline-version.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "时间轴对象触发变更字段",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/change-field-combing-caused-by-timeline-objects",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/change-field-combing-caused-by-timeline-objects.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "基础数据",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/basic-infomation",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "ID 服务",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/common_data-id",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "员工信息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/employee",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "组织管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/organization-management",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "组织架构调整",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/corehr-v2/approval_groups",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "岗职务管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job-management",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "入职",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/pre_hire",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "试用期",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/probation",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "异动",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/job_change",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "离职",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/offboarding",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "电子签",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/siganture",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "合同",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/contract",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "编制规划",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/workforce_plan",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "休假",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/leave",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "权限",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/authorization",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "流程",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/process-form_variable_data",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "基础薪酬",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/corehr-v1/basic-compensation",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 36,
+    "name": "Payroll",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/payroll-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "Payroll 概述",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/overview",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/overview.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "算薪项",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/acct_item",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "薪资组",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/paygroup",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "外部数据源设置",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/datasource",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "外部数据源记录",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/datasource_record",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "发薪活动",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/payment_activity",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "发薪明细",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/payment_detail",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "成本分摊明细",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/cost_allocation_detail",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "成本分摊报表",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/cost_allocation_report",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "成本分摊方案",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/payroll-v1/cost_allocation_plan",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 37,
+    "name": "招聘",
+    "url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "招聘概述",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/recruitment-development-guide",
+        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/recruitment-development-guide.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "枚举常量介绍",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/enum",
+        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/enum.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "错误码",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/error_code",
+        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/error_code.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "招聘相关配置",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/recruitment-related-configuration",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "获取候选人",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/get-candidates",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "候选人管理",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/candidate-management",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "生态对接",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/ecological-docking",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "内推账户",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/referral_account",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "附件",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire-v1/attachment",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 38,
+    "name": "OKR",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/okr-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "OKR 概述",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/okr-v1/okr-guide",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/okr-v1/okr-guide.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "OKR 周期",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/okr-v1/period",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "周期规则",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/okr-v1/period_rule",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "OKR 内容",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/okr-v1/okr",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "OKR 进展记录",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/okr-v1/progress_record",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "OKR 复盘",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/okr-v1/review",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 39,
+    "name": "实名认证",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/human_authentication-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "录入身份信息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/human_authentication-v1/identity/create",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/human_authentication-v1/identity/create.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "上传人脸基准图片",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/human_authentication-v1/face/upload-facial-reference-image",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/human_authentication-v1/face/upload-facial-reference-image.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "裁剪人脸图片",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/human_authentication-v1/face/facial-image-cropping",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/human_authentication-v1/face/facial-image-cropping.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "查询人脸认证结果",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/human_authentication-v1/face/query-recognition-result",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/human_authentication-v1/face/query-recognition-result.md",
+        "type": "DocumentType"
+      }
+    ]
+  },
+  {
+    "index": 40,
+    "name": "智能门禁",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/acs-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "智能门禁概述",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/acs-v1/development-guide",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/acs-v1/development-guide.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "用户管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/acs-v1/user",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "权限组",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/acs-v1/rule_external",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "访客",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/acs-v1/visitor",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "门禁设备",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/acs-v1/device",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "门禁记录",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/acs-v1/access_record",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 41,
+    "name": "绩效",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/performance-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "后台配置",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/performance-v2/review_config",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "评估任务",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/performance-v2/stage_task",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "指标数据",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/performance-v2/metric_detail",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "评估数据",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/performance-v2/review_data",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 42,
+    "name": "飞书词典",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/lingo-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "飞书词典概述",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/lingo-v1/overview",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/lingo-v1/overview.md",
+        "type": "DocumentType"
+      },
+      {
+        "name": "草稿",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/lingo-v1/draft",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "词条",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/lingo-v1/entity",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "分类",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/lingo-v1/classification",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "词库",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/lingo-v1/repo",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "图片管理",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/lingo-v1/file",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 43,
+    "name": "安全合规",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/security_and_compliance-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "设备管理 V2",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/security_and_compliance-v2",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "OpenAPI审计日志",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/security_and_compliance-v1/openapi_log",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "行为审计日志",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uQjM5YjL0ITO24CNykjN/audit_log",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "数据驻留",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/security_and_compliance-v1/user_migration",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 44,
+    "name": "关联组织",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/trust_party-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "关联组织",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/trust_party-v1/-collaboraiton-organization",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "可搜可见规则",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/trust_party-v1/searchable-and-visible-rules",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 45,
+    "name": "工作台",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/workplace-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "工作台访问数据",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/workplace-v1/workplace_access_data",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "我的常用",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/application-v6/app_recommend_rule",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 46,
+    "name": "飞书主数据",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/mdm-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "基础数据",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/mdm-v3",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "数据维度",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/mdm-v1/user_auth_data_relation",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 47,
+    "name": "汇报",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/report/report-v1",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "规则",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/report/report-v1/rule",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "规则看板",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/report/report-v1/rule-view",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "任务",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/report/report-v1/task",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 48,
+    "name": "eLearning",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/elearning-v2",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "课程学习",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/elearning-v2/course_registration",
+        "md_url": "",
+        "type": "DirectoryType"
+      }
+    ]
+  },
+  {
+    "index": 49,
+    "name": "历史版本（不推荐）",
+    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/historic-version",
+    "md_url": "",
+    "type": "DirectoryType",
+    "children": [
+      {
+        "name": "飞书 aPaaS",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/historic-version/apaas-v3",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "任务",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/task-v1",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "身份与认证",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/historic-version/authen",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "飞书词典",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/baike-v1",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "应用信息",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/historic-version/app-information",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "审批",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uYDOyUjL2gjM14iN4ITN",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "通讯录",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uETNz4SM1MjLxUzM/",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "云文档",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/historic-version/docs",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "招聘",
+        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uMzM1YjLzMTN24yMzUjN/hire_internal",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "飞书人事",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/historic-version/feishu-people",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "会议室",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/meeting_room-v1",
+        "md_url": "",
+        "type": "DirectoryType"
+      },
+      {
+        "name": "转换 ID",
+        "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card/id_convert",
+        "md_url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/cardkit-v1/card/id_convert.md",
+        "type": "DocumentType"
+      }
+    ]
+  }
+]

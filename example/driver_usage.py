@@ -2,7 +2,8 @@
 
 ⚠️ 使用前:
   1. 前往 https://open.feishu.cn/app 创建应用，获取 app_id 和 app_secret
-  2. 为应用申请 drive:drive 权限
+  2. 为应用申请 drive:drive.metadata:readonly、drive:file:upload、
+     drive:file:download、space:document:delete 权限
   3. 请在非生产环境中运行本脚本，测试中包含上传和删除操作
 """
 

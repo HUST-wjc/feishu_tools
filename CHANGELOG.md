@@ -2,12 +2,39 @@
 
 ## 0.0.4 (2026)
 
+### feishu_user
+
+- 新增 `FeishuUser`，支持通过 device flow 获取 user access token，并可复用本地 token cache
+- 默认 user scope 覆盖 Bitable / Doc / Spreadsheet / Driver 的常用读写路径，并避开常见需企业管理审核的粗粒度权限
+- 支持 `api.bitable()`、`api.doc()`、`api.spreadsheet()`、`api.driver()` 以当前用户身份创建业务 client
+- token cache 缺少本次请求 scope 时，会提示重新 device flow 更新授权
+
+### feishu_spreadsheet
+
+- 新增 `FeishuSpreadsheet`，支持 wiki / sheets 两种 URL 格式
+- 支持工作表元数据、单元格读取、批量读取、写入、批量写入、追加、前插、查找和替换
+- 支持 `sheet_id`、`sheet_name`、完整 range、相对 range + sheet 定位方式
+- 新增 `get_rows`、`get_cell`、`get_records` 等轻量读取包装
+
+### feishu_doc
+
+- 新增 `get_markdown()`，直接读取文档 Markdown 内容
+- 新增 `fetch_content()`，封装 docs_ai 高层读取接口，支持 markdown / xml / text
+- Markdown 写入链路改为官方 convert + block create，补充相关权限和文档说明
+
 ### feishu_bitable
 
 - 记录写入接口新增 `user_id_type` 参数，支持按 `open_id` / `union_id` / `user_id` 写入人员字段
 - `get_record` 改为复用 `batch_get_records`，避免继续依赖飞书已不推荐的单条记录历史接口
 - 补充 Bitable 相关函数的返回值示例和类型注解，覆盖 Record / Field / Table / View / Meta 常用接口
 - `parse_record` 文档补充公式 / 查找引用字段的解析行为说明
+- Table create/update/delete 返回值修正为当前官方响应结构，不再尝试读取不存在的 `table` 字段
+
+### 文档与测试
+
+- 重构 `local_test/`，按模块拆分真实接口测试；旧测试文件归档到 `old_test_file/`, `local_test/` 在 gitignore 中，所以对用户无感知
+- 新增 `AGENTS.md`，并将文档拆分为 `docs/user_guide/`、`docs/agents_doc/`、`docs/design_doc/`
+- README 缩减为项目入口和快速上手，详细模块用法迁移到 `docs/user_guide/`
 
 ## 0.0.3 (2026)
 
