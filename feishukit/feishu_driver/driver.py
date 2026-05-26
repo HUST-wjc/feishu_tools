@@ -28,6 +28,7 @@ class FeishuDriver:
         https://open.feishu.cn/document/server-docs/docs/drive-v1/folder/get-root-folder-meta
 
         获取用户"我的空间" (根文件夹) 的元数据，包括根文件夹的 token、ID 和文件夹所有者的 ID。
+        返回官方响应 data。
         """
         # https://open.feishu.cn/open-apis/drive/explorer/v2/root_folder/meta
         return self.feishu_api.request("GET", "/drive/explorer/v2/root_folder/meta")
@@ -47,6 +48,7 @@ class FeishuDriver:
         order_by: 排序方式 - EditedTime(默认) / CreatedTime
         direction: 排序规则，与 order_by 配合 - DESC(默认) / ASC
         user_id_type: 用户 ID 类型 - open_id(默认) / union_id / user_id
+        返回文件/文件夹 dict 列表。
         """
         params: dict[str, Any] = {}
 
@@ -76,6 +78,7 @@ class FeishuDriver:
         request_docs: 请求文档列表, 一次不可超过200个。格式为 [{"doc_token": doc_token, "doc_type": "file"}], doc_type 可选值为 doc, sheet, bitable, mindnote, file, wiki, docx, folder
         with_url: 是否返回文件的下载链接
         user_id_type: 用户 ID 类型, 可选值为 open_id, union_id, user_id
+        返回官方响应 data，通常包含 metas 列表。
         """
         if not request_files and not request_docs:
             raise ValueError("request_files 和 request_docs 不能同时为空")
@@ -117,6 +120,7 @@ class FeishuDriver:
         parent_node: 上传点 token (云文档的 token)
         file_name: 素材名称，默认取文件名
         extra: 部分场景需要传入素材所在云文档的 token, 格式见官方文档
+        返回 file_token。
         """
         file_path = os.path.expanduser(file_path)
         file_size = os.path.getsize(file_path)
@@ -230,6 +234,7 @@ class FeishuDriver:
         文件: https://open.feishu.cn/document/server-docs/docs/drive-v1/download/download
         素材: https://open.feishu.cn/document/server-docs/docs/drive-v1/media/download
 
+        download_type: files 或 medias
         file_token: 文件或素材的 token (通过文档块、电子表格、多维表格记录获取)
         save_path: 本地保存路径
         extra: 高级权限多维表格需要额外鉴权参数
@@ -246,6 +251,7 @@ class FeishuDriver:
         """批量获取素材临时下载链接 (24 小时有效)，一次最多 5 个
         https://open.feishu.cn/document/server-docs/docs/drive-v1/media/batch_get_tmp_download_url
 
+        仅适用于 medias 素材，不适用于云空间 files。
         返回: [{"file_token": "...", "tmp_download_url": "..."}, ...]
         """
         params: dict[str, Any] = {"file_tokens": file_tokens}
@@ -260,7 +266,7 @@ class FeishuDriver:
         """删除云空间中的文件或文件夹，只能删除文件，不能删除素材。删除成功后会进入回收站
         https://open.feishu.cn/document/server-docs/docs/drive-v1/file/delete
 
-        删除文件不会返回有效值
+        删除文件通常返回空 dict
         删除文件夹时会返回异步任务 ID ("task_id"), 
         可继续使用查询异步任务状态接口 (https://open.feishu.cn/document/server-docs/docs/drive-v1/file/async-task/task_check) 查询任务执行状态
         
