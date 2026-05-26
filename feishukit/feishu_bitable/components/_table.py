@@ -36,10 +36,13 @@ class TableMixin:
     def get_table_size(self) -> int:
         """获取多维表格记录数，只获取一条数据，快速返回，但是受限于飞书本身的接口限制，有时候还是会很慢很慢，可能是 1秒 也可能是 1分钟
 
+        https://open.feishu.cn/document/docs/bitable-v1/app-table-record/search
+        官方文档中 page_size 是查询参数。
+
         返回值为当前数据表的记录总数。
         """
         url = f"/bitable/v1/apps/{self.app_token}/tables/{self.table_id}/records/search"
-        response = self.feishu_api.request("POST", url, body={'page_size': 1})
+        response = self.feishu_api.request("POST", url, params={"page_size": 1})
         return response['total']
 
     # ── 创建 ──────────────────────────────────────────────────
@@ -91,9 +94,11 @@ class TableMixin:
         返回值为新建的数据表信息，例如:
         ```
         {
-            "name": "新数据表",
-            "revision": 1,
-            "table_id": "tblxxxxxxxxxxxxxx"
+            "table_id": "tblDBTWm6Es84d8c",
+            "default_view_id": "vewUuKOz2R",
+            "field_id_list": [
+                "fldhr2hBEA"
+            ]
         }
         ```
         """
@@ -106,7 +111,7 @@ class TableMixin:
             if table_name and not payload.setdefault("table", {}).get("name"):
                 payload["table"]["name"] = table_name
 
-        return self.feishu_api.request("POST", url, body=payload)["table"]
+        return self.feishu_api.request("POST", url, body=payload)
 
     def batch_create_tables(self, table_names: list[str]) -> dict[str, Any]:
         """批量创建多维表格
@@ -141,38 +146,36 @@ class TableMixin:
 
         如果名称为空或和旧名称相同，接口仍然会返回成功，但是名称不会被更改。
 
-        返回值为更新后的数据表信息，例如:
+        返回值为更新后的数据表名称，例如:
         ```
         {
-            "name": "新表名",
-            "revision": 344,
-            "table_id": "tblxxxxxxxxxxxxxx"
+            "name": "新的数据表名称"
         }
         ```
         """
         url = f"/bitable/v1/apps/{self.app_token}/tables/{self.table_id}"
         body = {"name": table_new_name}
-        return self.feishu_api.request("PATCH", url, body=body)["table"]
+        return self.feishu_api.request("PATCH", url, body=body)
 
     # ── 删除 ──────────────────────────────────────────────────
 
-    def delete_table(self, table_name: str) -> None:
+    def delete_table(self, table_name: str) -> dict[str, Any]:
         """删除多维表格中的一张数据表
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table/delete
 
-        删除成功无返回值
+        删除成功返回空 dict
         此处我们使用 batch_delete_tables 来替代官方的 api 入口
         """
-        self.batch_delete_tables(table_names=[table_name])
+        return self.batch_delete_tables(table_names=[table_name])
 
     def batch_delete_tables(self, 
         table_names: list[str] | None = None, 
         table_ids: list[str] | None = None, 
-        table_list: list[dict[str, Any]] | None = None) -> None:
+        table_list: list[dict[str, Any]] | None = None) -> dict[str, Any]:
         """批量删除多维表格中的数据表
         https://open.feishu.cn/document/server-docs/docs/bitable-v1/app-table/batch_delete
 
-        删除成功无返回值
+        删除成功返回空 dict
         如果多维表格中只剩最后一张数据表，则不允许被删除
         """
         table_list = table_list or self.list_tables()
@@ -192,4 +195,4 @@ class TableMixin:
 
         url = f"/bitable/v1/apps/{self.app_token}/tables/batch_delete"
         body = {"table_ids": table_ids}
-        self.feishu_api.request("POST", url, body=body)
+        return self.feishu_api.request("POST", url, body=body)
