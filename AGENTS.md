@@ -7,15 +7,18 @@
 
 - 先读 README 和现有源码风格，再设计接口。
 - 不要主动执行 `git pull`、`lark-cli update`、`clone` 或安装依赖；需要时先征得用户确认。
+- 不要读取、输出或提交 `local_test/` 中的真实凭据、token cache、配置密钥；除非用户明确指定某个文件可读。需要测试规则时只读 `docs/agents_doc/local_test_policy.md`。
 - SDK 不主动兼容旧接口、猜测式响应结构或错误调用方式。用当前官方文档或真实测试确认响应结构后，只实现单一路径。
 - 复杂查询条件优先透传飞书原生 `dict`，不要把官方 filter, sorter 等复杂字段的所有内容展平成 Python 参数。
 - 不要为一次性、一两行逻辑制造大量私有函数；只有复杂、可复用、可测试的逻辑才拆分。
 
 ## 常用流程
 
+- 文档目录索引：见 `docs/README.md`。
 - 新增模块或接入新 OpenAPI：见 `docs/agents_doc/agent_openapi_workflow.md`。
 - 验证函数返回值、docstring 和官方响应体是否一致：见 `docs/agents_doc/api_response_verification.md`。
 - 编写或运行本地测试：见 `docs/agents_doc/local_test_policy.md`。
+- 新增或调整示例脚本：见 `docs/agents_doc/example_policy.md`。
 - 调整 user token 默认 scope：见 `docs/design_doc/user_token_scope_policy.md`。
 
 ## 本地文档索引

@@ -85,3 +85,16 @@ https://open.feishu.cn/document/server-docs/docs/bitable-v1/bitable-overview
 - P0 应复用现有 `FeishuAPI` / `FeishuUser` / `paginate` 模式。
 - 只读需求不要混入发送、删除、管理类写操作。
 - 不引入新的 token 管理、缓存、日志、数据库或后台任务，除非用户明确要求。
+
+## 5. 新增 API 最小 checklist
+
+代码 commit 前确认下面项目已经处理：
+
+- 官方接口的文档 URL，如果存在，已写入公开方法 docstring (形似 https://open.feishu.cn/document/server-docs/docs/xxx)。
+- 已确认 endpoint、HTTP method、query/body 参数和响应 `data` 结构和官方文档匹配。
+- 接口和 user token 相关时，已确认所需 scope，并判断是否影响 `FeishuUser` 默认 scope。
+- 公开方法签名只暴露常用参数；复杂结构保持飞书原生 `dict`。
+- 返回值路径与官方响应一致，不写猜测式兼容分支。
+- 列表接口优先复用 `paginate` / `iter_paginate`。
+- README、`docs/user_guide/` 或 `example/` 已按需要同步。
+- 如涉及真实接口行为，已按 `local_test_policy.md` 补充或运行测试。

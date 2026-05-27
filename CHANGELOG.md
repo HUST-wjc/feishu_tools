@@ -5,6 +5,8 @@
 ### 文档
 
 - Bitable 的 README、用户指南和示例脚本改为优先展示 `list_parsed_records`，只在需要飞书原始响应结构时使用 `list_records`
+- 增强 agent 维护文档：新增文档索引、示例脚本规范、新增 API checklist、返回值修复 checklist，并强化 `local_test/` 敏感文件规则
+- 更新 PyPI 元数据描述和 keywords，补充 `FeishuUser` / user token 能力
 
 ## 0.0.4 (2026)
 
