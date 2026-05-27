@@ -25,26 +25,25 @@ bt = Bitable(
 ## Record
 
 ```python
-# 查询
-records = bt.list_records()
-records = bt.list_records(size_limit=10)
-records = bt.list_records(field_names=["名称", "状态"])
-records = bt.list_records(view_name="视图名")
-records = bt.list_records(use_default_view_id=True)
-records = bt.list_records(automatic_fields=True)
+# 查询，推荐使用解析后的记录，文本字段会被转换为普通字符串
+records = bt.list_parsed_records()
+records = bt.list_parsed_records(size_limit=10)
+records = bt.list_parsed_records(field_names=["名称", "状态"])
+records = bt.list_parsed_records(view_name="视图名")
+records = bt.list_parsed_records(use_default_view_id=True)
+records = bt.list_parsed_records(automatic_fields=True)
 
 # 带过滤条件
-records = bt.list_records(field_filter={
+records = bt.list_parsed_records(field_filter={
     "conditions": [{"field_name": "状态", "operator": "is", "value": ["完成"]}],
     "conjunction": "and",
 })
 
 # 带排序
-records = bt.list_records(field_sort=[{"field_name": "日期", "desc": True}])
+records = bt.list_parsed_records(field_sort=[{"field_name": "日期", "desc": True}])
 
-# 解析记录
-parsed = bt.list_parsed_records()
-parsed = bt.list_parsed_records(automatic_fields=True)
+# 需要飞书原始 record dict 时，再使用 list_records
+raw_records = bt.list_records(size_limit=10)
 
 # 单条操作
 record = bt.get_record("recxxxx")
@@ -67,7 +66,9 @@ bt.create_record({"负责人": ["ou_xxx"]}, user_id_type="open_id")
 bt.batch_update_records([(rid, {"负责人": ["on_xxx"]})], user_id_type="union_id")
 ```
 
-记录接口的返回值会因飞书接口和字段类型不同而变化。`list_records` / `batch_get_records` 的文本字段通常是 rich-text list，`create_record` / `update_record` 的文本字段通常是字符串。复杂返回结构以函数 docstring 和官方响应为准。
+普通读取场景优先使用 `list_parsed_records`。它会在 `list_records` 的基础上按字段类型做轻量解析，例如把文本字段的 rich-text list 转为字符串。
+
+需要飞书原始响应结构时，再使用 `list_records` / `batch_get_records`。原始返回中，文本字段通常是 rich-text list，`create_record` / `update_record` 的文本字段通常是字符串。复杂返回结构以函数 docstring 和官方响应为准。
 
 ## Field
 
@@ -149,7 +150,7 @@ bt.create_record({"附件": [{"file_token": file_token}]})
 filter 示例：
 
 ```python
-bt.list_records(field_filter={
+bt.list_parsed_records(field_filter={
     "conditions": [
         {"field_name": "职位", "operator": "is", "value": ["初级销售员"]},
         {"field_name": "销售额", "operator": "isGreater", "value": ["10000.0"]},
@@ -165,7 +166,7 @@ bt.list_records(field_filter={
 sort 示例：
 
 ```python
-bt.list_records(field_sort=[{"field_name": "日期", "desc": True}])
+bt.list_parsed_records(field_sort=[{"field_name": "日期", "desc": True}])
 ```
 
 当 `field_filter` 或 `field_sort` 不为空时，`view_id` / `view_name` 会被忽略。

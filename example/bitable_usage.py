@@ -80,31 +80,35 @@ if __name__ == "__main__":
 
     first_field = fields[0]["field_name"]
 
-    records = bt.list_records()
+    records = bt.list_parsed_records()
     print(f"\n全部记录数: {len(records)}")
 
-    records = bt.list_records(size_limit=2)
+    records = bt.list_parsed_records(size_limit=2)
     print(f"size_limit=2: {len(records)} 条")
 
     one = bt.take_one_record()
     print(f"take_one_record: {one.get('record_id', 'N/A')}")
 
     # 带过滤
-    records = bt.list_records(field_filter={
+    records = bt.list_parsed_records(field_filter={
         "conditions": [{"field_name": first_field, "operator": "isNotEmpty", "value": []}],
         "conjunction": "and",
     })
     print(f"filter (isNotEmpty): {len(records)} 条")
 
     # 带排序
-    records = bt.list_records(field_sort=[{"field_name": first_field, "desc": True}], size_limit=3)
+    records = bt.list_parsed_records(field_sort=[{"field_name": first_field, "desc": True}], size_limit=3)
     print(f"sort (desc, limit 3): {len(records)} 条")
 
     # 使用 bitable_url 中的默认视图
-    records = bt.list_records(use_default_view_id=True, size_limit=3)
+    records = bt.list_parsed_records(use_default_view_id=True, size_limit=3)
     print(f"default view (limit 3): {len(records)} 条")
 
     # 解析记录 — 自动展平文本类型
+    raw_records = bt.list_records(size_limit=1)
+    print(f"\nlist_records 原始结构示例 (limit 1):")
+    pprint(raw_records)
+
     parsed = bt.list_parsed_records(size_limit=2)
     print(f"\nlist_parsed_records (limit 2):")
     for rid, data in parsed:

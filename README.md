@@ -107,7 +107,7 @@ bt = Bitable(
     bitable_url="https://xxx.feishu.cn/wiki/xxxxx?table=tblxxxx",
 )
 
-records = bt.list_records(size_limit=10)
+records = bt.list_parsed_records(size_limit=10)
 rid = bt.create_record({"名称": "test", "状态": "进行中"})["record_id"]
 bt.update_record(rid, {"状态": "完成"})
 bt.delete_record(rid)

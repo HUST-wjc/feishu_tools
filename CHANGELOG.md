@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.5 (未发布)
+
+### 文档
+
+- Bitable 的 README、用户指南和示例脚本改为优先展示 `list_parsed_records`，只在需要飞书原始响应结构时使用 `list_records`
+
 ## 0.0.4 (2026)
 
 ### feishu_user
