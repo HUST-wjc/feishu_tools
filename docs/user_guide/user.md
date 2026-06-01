@@ -46,6 +46,8 @@ api = FeishuUser(
 
 cache 中保存 user access token、refresh token、过期时间和已授权 scope。refresh token 比 access token 更敏感，不要提交到 git。
 
+`FeishuUser` 会按 cache 中的过期时间主动检查 user access token。access token 临近过期时，如果 refresh token 仍有效，会先刷新 token 再发起业务请求，避免先请求失败再重试。
+
 如果 cache 中已有 scope 不是本次请求 scope 的超集，SDK 会提示重新 device flow 更新授权。
 
 ## 派生业务 client
@@ -84,7 +86,7 @@ device flow 单次最多申请 50 个 scope。refresh token 刷新时可以缩�
 
 `offline_access=True` 时会请求 refresh token 能力，适合 notebook 和脚本长期复用。
 
-`offline_access=False` 时只拿短期 user access token；access token 过期后需要重新授权。
+`offline_access=False` 时只拿短期 user access token；access token 过期后没有 refresh token 可用，需要重新授权。
 
 ## no-confirm 测试
 

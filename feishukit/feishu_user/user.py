@@ -1,7 +1,7 @@
 from typing import Any, Iterable
 from urllib.parse import quote
 
-from ..feishu_api import FeishuAPI, FeishuRuntimeError
+from ..feishu_api import FeishuAPI
 from .auth import FeishuUserDeviceAuth
 
 DEFAULT_USER_DEVICE_FLOW_SCOPES = (
@@ -44,12 +44,13 @@ class FeishuUser(FeishuAPI):
         feishu_api: FeishuAPI | None = None,
     ) -> None:
         """创建代表授权用户本人调用 API 的 Feishu API client。
+        feishu_api 参数仅用于复用 app_id、app_secret 和 base_url；不会复用 tenant access token。
 
         初始化时会确保 user access token 可用；没有可用 cache 或 refresh token
         时，会发起 device flow 并阻塞等待授权。
         `scopes=None` 时默认请求常用 bitable、doc、spreadsheet、driver
         读写和 wiki URL 解析权限。
-        `offline_access=False` 会关闭 refresh token 能力；user access token
+        `offline_access=False` 会关闭 refresh token 能力; user access token
         过期后，下次请求必须重新走 device flow。
         """
         if scopes is None:
@@ -81,23 +82,20 @@ class FeishuUser(FeishuAPI):
 
     def _get_access_token(self, refresh: bool = False) -> str:
         if refresh:
-            self.user_auth.refresh_after_invalid_token()
-        else:
-            self.user_auth.ensure_token_valid()
-        return self.user_auth.access_token
+            self.user_auth.access_token = ''
+        self.user_auth.ensure_token_valid()
+        self.access_token = self.user_auth.access_token
+        return self.access_token
 
     # ── 当前用户 ────────────────────────────────────────────────
 
     def get_current_user(self) -> dict[str, Any]:
         """获取当前授权用户信息。
 
-        https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/reference/authen-v1/user_info/get
+        https://open.feishu.cn/document/server-docs/docs/reference/authen-v1/user_info/get
         返回当前 user_access_token 对应的用户信息 dict。
         """
-        if self.user_auth.user:
-            return self.user_auth.user
         data = self.request("GET", "/authen/v1/user_info")
-        self.user_auth.user = data
         return data
 
     # ── 云文档 / 知识库发现 ─────────────────────────────────────
@@ -113,7 +111,7 @@ class FeishuUser(FeishuAPI):
     ) -> dict[str, Any]:
         """搜索当前用户可见的云文档、知识库、表格、多维表格等资源。
 
-        https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/search-v2/doc_wiki
+        https://open.feishu.cn/document/server-docs/docs/search-v2/doc_wiki
 
         ``doc_filter`` 和 ``wiki_filter`` 直接使用飞书原生 filter 结构，例如:
 
@@ -156,37 +154,6 @@ class FeishuUser(FeishuAPI):
             "results": data.get("res_units") or [],
         }
 
-    def get_my_library_space(self) -> dict[str, Any]:
-        """获取当前用户个人知识库对应的真实 space 信息。
-
-        依赖知识库子节点列表接口:
-        https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space-node/list
-
-        优先调用个人知识库接口；当接口不返回 space 时，退回到个人知识库
-        nodes 列表推导 space_id。返回 space dict。
-        """
-        try:
-            data = self.request("GET", "/wiki/v2/spaces/my_library")
-        except FeishuRuntimeError as exc:
-            first_error = exc
-        else:
-            space = data.get("space") or {}
-            if space:
-                return space
-            first_error = None
-
-        data = self.request(
-            "GET",
-            "/wiki/v2/spaces/my_library/nodes",
-            params={"page_size": 1},
-        )
-        items = data.get("items") or []
-        if items and items[0].get("space_id"):
-            return {"space_id": items[0]["space_id"], "space_type": "my_library"}
-        if first_error:
-            raise first_error
-        return {}
-
     def list_my_library_nodes(
         self,
         *,
@@ -196,7 +163,7 @@ class FeishuUser(FeishuAPI):
     ) -> list[dict[str, Any]]:
         """列出当前用户个人知识库中的节点。
 
-        https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space-node/list
+        https://open.feishu.cn/document/server-docs/docs/wiki-v2/space-node/list
         对应 ``GET /wiki/v2/spaces/my_library/nodes``。
 
         返回节点 dict 列表；如需列出特定父节点下内容，传入 parent_node_token。
@@ -218,7 +185,7 @@ class FeishuUser(FeishuAPI):
     ) -> list[dict[str, Any]]:
         """列出指定知识库空间或父节点下的节点。
 
-        https://open.feishu.cn/document/ukTMukTMukTM/uUDN04SN0QjL1QDN/wiki-v2/space-node/list
+        https://open.feishu.cn/document/server-docs/docs/wiki-v2/space-node/list
         返回节点 dict 列表。
         """
         params: dict[str, Any] = {}
@@ -232,7 +199,6 @@ class FeishuUser(FeishuAPI):
             params=params,
             page_size=page_size,
             size_limit=size_limit,
-            item_key="items",
         )
 
     def get_wiki_node(self, token: str, obj_type: str | None = None) -> dict[str, Any]:

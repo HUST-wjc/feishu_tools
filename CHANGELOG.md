@@ -2,6 +2,18 @@
 
 ## 0.0.5 (未发布)
 
+### feishu_user
+
+- user access token 会按 `expires_at` 主动检查有效期；access token 临近过期且 refresh token 有效时，会先刷新再发起业务请求
+- 删除 `FeishuUserDeviceAuth.refresh_after_invalid_token()`，token invalid 重试统一回到 `ensure_token_valid()` 路径
+- `get_current_user()` 不再写入 auth 层缓存，每次调用直接请求当前 user info
+- 删除 `get_my_library_space()`，避免用额外权限接口和 nodes fallback 混合推导个人知识库 space；需要节点时直接使用 `list_my_library_nodes()`
+- `FeishuUser(feishu_api=...)` 文档明确为只复用 `app_id`、`app_secret` 和 `base_url`，不复用 tenant access token
+
+### local_test
+
+- user no-confirm 测试显式覆盖 access token 已过期但 refresh token 有效时的自动刷新路径，并禁止触发 device flow
+
 ### 文档
 
 - Bitable 的 README、用户指南和示例脚本改为优先展示 `list_parsed_records`，只在需要飞书原始响应结构时使用 `list_records`

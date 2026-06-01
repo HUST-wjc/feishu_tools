@@ -38,6 +38,7 @@ class FeishuAPI:
         https://open.feishu.cn/document/server-docs/api-call-guide/calling-process/get-access-token
 
         此处 requests 默认 timeout 30s, 防止飞书偶发的网络问题。不接受配置 timeout 参数，因为 30s 已经足够长
+        refresh 参数为支持 user 模块兼容，此处并无实际意义
         """
         url = f"{self.base_url}/auth/v3/tenant_access_token/internal"
         headers = {"Content-Type": "application/json; charset=utf-8"}

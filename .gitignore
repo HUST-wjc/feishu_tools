@@ -25,6 +25,7 @@ todo/
 *credential*.json
 token_cache*.json
 *token_cache*.json
+config.py
 
 # dist
 **/dist/

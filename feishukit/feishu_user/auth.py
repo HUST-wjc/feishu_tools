@@ -69,22 +69,30 @@ class FeishuUserDeviceAuth:
 
         self._load_cache()
 
-    def ensure_token_valid(self) -> str:
-        if self.access_token:
-            return self.access_token
+    @property
+    def _access_token_valid(self) -> bool:
+        if not self.access_token:
+            return False
+        if time.time() >= self.expires_at - 60:
+            return False
+        return True
 
-        if self.refresh_token and time.time() < self.refresh_expires_at:
+    @property
+    def _refresh_token_valid(self) -> bool:
+        if not self.refresh_token:
+            return False
+        if time.time() >= self.refresh_expires_at - 60:
+            return False
+        return True
+
+    def ensure_token_valid(self) -> str:
+        if self._access_token_valid:
+            return self.access_token
+        if self._refresh_token_valid:
             self._refresh_with_refresh_token()
             return self.access_token
-
         self._authorize_with_device_flow()
         return self.access_token
-
-    def refresh_after_invalid_token(self) -> None:
-        if self.refresh_token and time.time() < self.refresh_expires_at:
-            self._refresh_with_refresh_token()
-            return
-        self._authorize_with_device_flow()
 
     def _load_cache(self) -> None:
         if not self.token_cache_path or not self.token_cache_path.exists():
