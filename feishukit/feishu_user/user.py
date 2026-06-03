@@ -6,7 +6,8 @@ from .auth import FeishuUserDeviceAuth
 
 DEFAULT_USER_DEVICE_FLOW_SCOPES = (
     # user device flow 单次最多申请 50 个 scope。默认覆盖 feishukit 当前
-    # bitable/doc/spreadsheet/driver 的常用读写路径，避开常见需企业管理审核的权限。
+    # bitable/doc/spreadsheet/driver 的常用读写路径，并覆盖 IM 常用读写路径。
+    # 仍避开常见需企业管理审核的权限，以及解散群/踢出群成员等高风险能力。
     # 官方 scope list: https://open.feishu.cn/document/server-docs/application-scope/scope-list
     "bitable:app",
     "docs:document.content:read",
@@ -26,6 +27,15 @@ DEFAULT_USER_DEVICE_FLOW_SCOPES = (
     "drive:file:upload",
     "drive:file:download",
     "space:document:delete",
+    "im:chat:read",
+    "im:chat.members:read",
+    "im:chat:update",
+    "im:message",
+    "im:message:readonly",
+    "im:message.group_msg:get_as_user",
+    "im:message.p2p_msg:get_as_user",
+    "im:message.reactions:read",
+    "im:message.reactions:write_only",
 )
 
 
@@ -49,7 +59,7 @@ class FeishuUser(FeishuAPI):
         初始化时会确保 user access token 可用；没有可用 cache 或 refresh token
         时，会发起 device flow 并阻塞等待授权。
         `scopes=None` 时默认请求常用 bitable、doc、spreadsheet、driver
-        读写和 wiki URL 解析权限。
+        读写、IM 常用读写和 wiki URL 解析权限。
         `offline_access=False` 会关闭 refresh token 能力; user access token
         过期后，下次请求必须重新走 device flow。
         """
@@ -234,3 +244,8 @@ class FeishuUser(FeishuAPI):
         """用当前用户身份创建 FeishuDriver client。"""
         from ..feishu_driver.driver import FeishuDriver
         return FeishuDriver(feishu_api=self, **kwargs)
+
+    def im(self, **kwargs: Any):
+        """用当前用户身份创建 FeishuIM client。"""
+        from ..feishu_im.im import FeishuIM
+        return FeishuIM(feishu_api=self, **kwargs)

@@ -2,6 +2,7 @@ from .feishu_api import FeishuAPI, FeishuRuntimeError
 from .feishu_bitable import Bitable
 from .feishu_doc import FeishuDoc
 from .feishu_driver import FeishuDriver
+from .feishu_im import FeishuIM
 from .feishu_spreadsheet import FeishuSpreadsheet
 from .feishu_user import (
     FeishuAuthError,
@@ -11,7 +12,7 @@ from .feishu_user import (
     FeishuUserDeviceAuth,
 )
 
-__version__ = "0.0.4"
+__version__ = "0.0.6"
 __all__ = [
     "FeishuAPI",
     "FeishuUser",
@@ -23,5 +24,6 @@ __all__ = [
     "Bitable",
     "FeishuDoc",
     "FeishuDriver",
+    "FeishuIM",
     "FeishuSpreadsheet",
 ]

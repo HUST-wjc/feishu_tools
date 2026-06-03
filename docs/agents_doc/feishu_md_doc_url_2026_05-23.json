@@ -22,14 +22,14 @@
       },
       {
         "name": "API 列表",
-        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/server-api-list",
-        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/server-api-list.md",
+        "url": "https://open.feishu.cn/document/server-docs/group/server-api-list",
+        "md_url": "https://open.feishu.cn/document/server-docs/group/server-api-list.md",
         "type": "DocumentType"
       },
       {
         "name": "API 权限列表",
-        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/scope-list",
-        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/scope-list.md",
+        "url": "https://open.feishu.cn/document/server-docs/group/scope-list",
+        "md_url": "https://open.feishu.cn/document/server-docs/group/scope-list.md",
         "type": "DocumentType"
       },
       {
@@ -40,14 +40,14 @@
       },
       {
         "name": "通用参数",
-        "url": "https://open.feishu.cn/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology",
-        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/uYTM5UjL2ETO14iNxkTN/terminology.md",
+        "url": "https://open.feishu.cn/document/server-docs/group/terminology",
+        "md_url": "https://open.feishu.cn/document/server-docs/group/terminology.md",
         "type": "DocumentType"
       },
       {
         "name": "通用错误码",
-        "url": "https://open.feishu.cn/document/ukTMukTMukTM/ugjM14COyUjL4ITN",
-        "md_url": "https://open.feishu.cn/document/ukTMukTMukTM/ugjM14COyUjL4ITN.md",
+        "url": "https://open.feishu.cn/document/server-docs/api-call-guide/generic-error-code",
+        "md_url": "https://open.feishu.cn/document/server-docs/api-call-guide/generic-error-code.md",
         "type": "DocumentType"
       }
     ]
@@ -55,7 +55,7 @@
   {
     "index": 3,
     "name": "事件与回调",
-    "url": "https://open.feishu.cn/document/uAjLw4CM/ukTMukTMukTM/event-subscription-guide",
+    "url": "https://open.feishu.cn/document/server-docs/event-subscription-guide",
     "md_url": "",
     "type": "DirectoryType",
     "children": [

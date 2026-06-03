@@ -7,6 +7,7 @@
 - 多维表格 `Bitable`
 - 文档 `FeishuDoc`
 - 云空间 `FeishuDriver`
+- 即时通讯 `FeishuIM`
 - 电子表格 `FeishuSpreadsheet`
 - 用户身份 API `FeishuUser`
 
@@ -117,7 +118,7 @@ bt.delete_record(rid)
 
 ### User Token
 
-`FeishuUser` 使用 device flow 获取 user access token，并能用当前用户身份派生 Bitable、Doc、Spreadsheet、Driver client。
+`FeishuUser` 使用 device flow 获取 user access token，并能用当前用户身份派生 Bitable、Doc、Spreadsheet、Driver、IM client。
 
 ```python
 from feishukit import FeishuUser
@@ -135,6 +136,7 @@ bt = api.bitable("https://xxx.feishu.cn/base/xxxxx?table=tblxxxx")
 doc = api.doc("https://xxx.feishu.cn/wiki/xxxxx")
 ss = api.spreadsheet("https://xxx.feishu.cn/sheets/xxxxx?sheet=abc123")
 driver = api.driver()
+im = api.im()
 ```
 
 默认仍建议优先使用 tenant token。只有当目标资源必须以“当前用户本人”身份访问，或资源协作权限只授予用户而非应用时，再使用 `FeishuUser`。
@@ -170,6 +172,24 @@ driver.delete_file(file_token, file_type="file")
 ```
 
 详细用法见 [Driver 用户指南](docs/user_guide/driver.md)。
+
+### IM
+
+```python
+from feishukit import FeishuIM
+
+im = FeishuIM(app_id="cli_xxxx", app_secret="xxxx")
+
+groups = im.search_groups("测试群", size_limit=5)
+groups = im.list_groups(group_types="p2p", size_limit=5)  # user 身份可列单聊
+messages = im.list_messages("oc_xxx", size_limit=10)
+sent = im.send_text("hello", chat_id="oc_xxx")
+im.reply_text(sent["message_id"], "received")
+```
+
+IM 读取接口保留飞书原始 message dict，并额外补充轻量 `content_text`。写操作会真实发送消息或修改群组。测试群成员、更新群和解散群前，先确认目标是专用测试群；解散群只能用于本次测试新建的群。
+
+详细用法见 [IM 用户指南](docs/user_guide/im.md)。
 
 ### Spreadsheet
 

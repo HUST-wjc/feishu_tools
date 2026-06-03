@@ -9,6 +9,8 @@
 - 不要主动执行 `git pull`、`lark-cli update`、`clone` 或安装依赖；需要时先征得用户确认。
 - 不要读取、输出或提交 `local_test/` 中的真实凭据、token cache、配置密钥；除非用户明确指定某个文件可读。需要测试规则时只读 `docs/agents_doc/local_test_policy.md`。
 - SDK 不主动兼容旧接口、猜测式响应结构或错误调用方式。用当前官方文档或真实测试确认响应结构后，只实现单一路径。
+- `lark-cli` 命令对应的 Go 代码中可能包含复合多 API 的 shortcuts。实现类似接口时，Go 代码的参数设计可以作为易用性参考，但 SDK 最终发起的 request 参数必须优先以官方 OpenAPI 文档为准。
+- 如果 `lark-cli` Go 代码已经使用比官网 Markdown 文档更新的接口（比如官方文档是 v1，lark-cli 已经在使用 v2），先尝试按接口名或 endpoint 查找新版官方文档；查不到时，可以在真实请求验证通过后采用新版接口，但代码注释或 docstring 必须说明参数来源是 `lark-cli` Go 实现和真实接口测试，而不是当前官方文档。参数范围、枚举值、是否必填可以参考 `lark-cli` 及其 Go 代码实现。
 - 复杂查询条件优先透传飞书原生 `dict`，不要把官方 filter, sorter 等复杂字段的所有内容展平成 Python 参数。
 - 不要为一次性、一两行逻辑制造大量私有函数；只有复杂、可复用、可测试的逻辑才拆分。
 

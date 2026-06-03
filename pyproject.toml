@@ -5,12 +5,12 @@ build-backend = "hatchling.build"
 [project]
 name = "feishukit"
 dynamic = ["version"]
-description = "飞书非官方 Python SDK，支持 Bitable、Doc、Driver、Spreadsheet 和 FeishuUser user token API"
+description = "飞书非官方 Python SDK，支持 Bitable、Doc、Driver、Spreadsheet、IM 和 FeishuUser user token API"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE"]
-keywords = ["feishu", "lark", "bitable", "doc", "driver", "spreadsheet", "user-token", "sdk"]
+keywords = ["feishu", "lark", "bitable", "doc", "driver", "spreadsheet", "im", "user-token", "sdk"]
 authors = [
     { name = "cafe_tea" },
 ]

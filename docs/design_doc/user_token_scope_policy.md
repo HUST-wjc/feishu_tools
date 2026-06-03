@@ -1,7 +1,7 @@
 # User Token Scope Policy
 
 `FeishuUser(scopes=None)` 使用 `DEFAULT_USER_DEVICE_FLOW_SCOPES`。默认值应覆盖
-feishukit 当前主要模块的常见 user 身份读写路径，同时避开常见需要企业管理审核的权限。
+feishukit 当前主要模块的常见 user 身份读写路径，同时避开解散群、踢人、撤回消息等高风险能力。
 
 ## 默认覆盖目标
 
@@ -9,6 +9,7 @@ feishukit 当前主要模块的常见 user 身份读写路径，同时避开常�
 - `FeishuDoc`：Markdown 读取、docx block 读写、素材上传/下载、wiki URL 解析。
 - `FeishuSpreadsheet`：元数据、工作表列表、单元格读写。
 - `FeishuDriver`：根目录/文件元数据、小文件上传、下载、删除。
+- `FeishuIM`：群信息、群成员、消息读取、群信息更新、reaction 读写，以及消息相关基础权限。
 
 ## 当前默认 scope
 
@@ -32,6 +33,15 @@ DEFAULT_USER_DEVICE_FLOW_SCOPES = (
     "drive:file:upload",
     "drive:file:download",
     "space:document:delete",
+    "im:chat:read",
+    "im:chat.members:read",
+    "im:chat:update",
+    "im:message",
+    "im:message:readonly",
+    "im:message.group_msg:get_as_user",
+    "im:message.p2p_msg:get_as_user",
+    "im:message.reactions:read",
+    "im:message.reactions:write_only",
 )
 ```
 
@@ -53,9 +63,15 @@ DEFAULT_USER_DEVICE_FLOW_SCOPES = (
 - `space:document:retrieve`
 - `im:message.send_as_user`
 - `im:message:recall`
+- `im:chat:create_by_user`
+- `im:chat:delete`
+- `im:chat.members:write_only`
 - 各类群管理、群置顶、业务标签等 IM 管理权限
 
 如果新增功能必须使用这些权限，应该让调用方显式传入 `scopes`，并在方法文档或测试中说明。
+`im:chat.members:write_only` 同时覆盖拉人和踢人，因此不能作为默认 scope。
+`im:message.send_as_user`、`im:chat:create_by_user`、`im:message:recall` 已在
+`tmp/scope_can_not_get.md` 中标记为常见需审核权限，也不默认申请。
 
 ## 维护规则
 

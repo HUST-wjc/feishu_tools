@@ -59,13 +59,16 @@ bt = api.bitable("https://xxx.feishu.cn/base/xxxxx?table=tblxxxx")
 doc = api.doc("https://xxx.feishu.cn/wiki/xxxxx")
 ss = api.spreadsheet("https://xxx.feishu.cn/sheets/xxxxx?sheet=abc123")
 driver = api.driver()
+im = api.im()
 ```
 
 这些 client 的读写逻辑和普通 tenant 身份入口一致，只是底层 token 换成当前用户身份。
 
 ## scopes
 
-`scopes=None` 使用 feishukit 默认常用 user scope，覆盖当前 SDK 的 Bitable、Doc、Spreadsheet、Driver 常用读写路径，并避开常见需要企业管理员审核的粗粒度权限。
+`scopes=None` 使用 feishukit 默认常用 user scope，覆盖当前 SDK 的 Bitable、Doc、Spreadsheet、Driver 常用读写路径，以及 IM 常用读写路径。
+
+IM 默认 scope 包含群信息读取、群信息更新、消息读取和 reaction 读写。以用户身份发送消息、创建群、撤回消息、增删群成员、解散群等高风险或常见需审核操作，需要调用方显式传入对应 user scopes。
 
 如果需要更小或更大的权限范围，可以显式传入 scope：
 

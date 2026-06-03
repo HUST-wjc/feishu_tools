@@ -1,5 +1,28 @@
 # Changelog
 
+## 0.0.6 (未发布)
+
+### feishu_im
+
+- 新增 `FeishuIM` 模块，按 `GroupMixin` 和 `MessageMixin` 拆分群聊和消息能力
+- Group 支持列出聊天、搜索聊天、获取群信息、创建/更新/删除群、成员列表、添加/移除成员和成员关系判断
+- `list_groups()` 支持 `group_types` 透传到飞书 `types` 参数；真实测试确认 user 身份可用 `p2p`，话题群包含在 `group` 中
+- `search_groups()` 使用已验证的 `POST /im/v2/chats/search`，复杂筛选通过原生 `chat_filter` 透传
+- Message 支持消息列表、话题回复列表、单条/批量消息详情、发送、回复、撤回和 reaction 增删查
+- 消息读取默认使用 `card_msg_content_type="raw_card_content"`；普通 chat 历史默认传 `only_thread_root_messages=true`
+- 消息返回保留飞书原始 dict，并补充轻量 `content_text` 便于查看文本和 post/rich-text 摘要
+
+### feishu_user
+
+- `FeishuUser` 新增 `api.im()` 工厂方法，可用当前 user access token 创建 `FeishuIM`
+- 默认 user scope 扩展到 IM 常用读写路径，仍避开用户发消息、创建群、撤回消息、解散群和踢人等高风险或常见需审核权限
+
+### 文档与测试
+
+- 新增 IM 用户指南，覆盖 group/message 用法、user/bot 身份差异、scope 说明和本地测试边界
+- 更新 user token 默认 scope 策略文档、README 和 PyPI 元数据
+- 使用应用身份和用户身份验证 group 读取、message 读取、reaction 读写；message 写入测试仅在 `chat_test_1` 中执行并清理测试消息
+
 ## 0.0.5 (未发布)
 
 ### feishu_user

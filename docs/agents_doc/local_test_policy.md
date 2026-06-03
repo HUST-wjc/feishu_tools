@@ -15,7 +15,7 @@
 
 - 每个模块独立目录，例如 `feishu_bitable/`、`feishu_doc/`、`feishu_driver/`、`feishu_spreadsheet/`、`feishu_user/`。
 - 默认生成 `.py` 脚本给 agent 自动测试。
-- 如需 notebook，先让 `.py` 测试通过，再生成对应 `.ipynb` 供开发者手动调试。
+- 如需 notebook，先让 `.py` 测试通过，询问用户是否需要`.ipynb`，如果需要则生成对应 `.ipynb` 供开发者手动调试。
 
 ## User Token 测试
 
@@ -23,6 +23,13 @@
 - no-confirm 脚本禁止触发 device flow；cache 缺权限时应明确报错或 SKIP。
 - 需要用户确认的 device flow 单独放在 with-confirm 脚本中运行。
 - 测试 device flow 时使用长 timeout，避免短 timeout 反复生成新 device code。
+
+## IM 测试
+
+- message 发送、回复、reaction 等写入测试只能在 `chat_test_1`、`chat_test_2`、`chat_topic_test_1` 中执行。
+- group 更新测试只能在上述安全群中执行；group 删除/解散只能用于本次测试新建的群。
+- 不自动测试踢出群成员；`im:chat.members:write_only` 同时覆盖拉人和踢人，使用前必须单独确认测试对象。
+- 测试消息应在 `finally` 中撤回或清理；撤回失败时输出失败原因，但不要重试破坏性操作。
 
 ## 权限不足
 

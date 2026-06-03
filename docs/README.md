@@ -8,6 +8,7 @@
 - `docs/user_guide/bitable.md`：多维表格 Table / Record / Field / View / Media。
 - `docs/user_guide/doc.md`：飞书文档读取、Markdown 写入和素材块。
 - `docs/user_guide/driver.md`：云空间文件、素材上传下载和删除。
+- `docs/user_guide/im.md`：即时通讯 group / message。
 - `docs/user_guide/spreadsheet.md`：电子表格读取、写入、range 规则。
 - `docs/user_guide/user.md`：user access token、device flow、token cache。
 
