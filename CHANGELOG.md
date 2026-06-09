@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.0.6 (未发布)
+## 0.0.6 (2026)
 
 ### feishu_im
 
@@ -23,7 +23,7 @@
 - 更新 user token 默认 scope 策略文档、README 和 PyPI 元数据
 - 使用应用身份和用户身份验证 group 读取、message 读取、reaction 读写；message 写入测试仅在 `chat_test_1` 中执行并清理测试消息
 
-## 0.0.5 (未发布)
+## 0.0.5 (2026)
 
 ### feishu_user
 
